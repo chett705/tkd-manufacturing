@@ -68,19 +68,4 @@ Route::prefix('admin')
 //Route for frontend pages
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/about', [AboutController::class, 'index'])->name('about');
 
-Route::get('/products', [ProductController::class, 'index'])->name('products.index');
-Route::get('/products/{slug}', [ProductController::class, 'show'])->name('products.show');
-
-Route::get('/export', [ExportController::class, 'index'])->name('export');
-
-Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
-Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
-
-Route::get('/activities', [ActivityController::class, 'index'])->name('activities');
-
-Route::get('/faq', [FaqController::class, 'index'])->name('faq');
-
-Route::get('/contact', [ContactController::class, 'index'])->name('contact');
-Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
