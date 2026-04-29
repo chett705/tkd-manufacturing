@@ -11,18 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('products', function (Blueprint $table) {
+        // for certificates and uploading files
+        Schema::create('certificates', function (Blueprint $table) {
             $table->id();
-
             $table->string('name');
-            $table->text('description')->nullable();
-
-            $table->json('sizes')->nullable();   // ["6mm", "8mm", "12mm"]
-            $table->json('colors')->nullable();  // ["Natural", "Green", "Pink"]
-
-            $table->string('packaging')->nullable();
-            $table->string('image')->nullable();
-
+            $table->string('file')->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('certificates');
     }
 };
