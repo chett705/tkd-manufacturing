@@ -2,9 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+
+
+// bakend
+
+// frontend
 Route::get('/',function(){
     return view('Frontend.pages.HomePage');
 });
