@@ -120,7 +120,11 @@
             <h1 class="text-center text-3xl font-bold capitalize">why choose us</h1>
 
             <div class="grid grid-cols-3 gap-5">
-                
+                {{-- 100% biodegradable products --}}
+                <div>
+                    <img src="{{ asset('icons/biodegradable.png') }}" alt="biodegradable">
+                    <p>100% biodegradable products</p>
+                </div>
             </div>
         </div>
 
