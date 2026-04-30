@@ -64,8 +64,18 @@ Route::prefix('admin')
 
 
 // frontend
-
-//Route for frontend pages
-Route::get('/', [HomeController::class, 'index'])->name('home');
-
-
+Route::get('/',function(){
+    return view('Frontend.pages.HomePage');
+})->name('home');
+Route::get('/about-us',function(){
+    return view('Frontend.pages.AboutUsPage');
+})->name('about-us');
+Route::get('/our-trading-products',function(){
+    return view('Frontend.pages.ProductPage');
+})->name('products');
+Route::get('/export',function(){
+    return view('Frontend.pages.Export');
+})->name('export');
+Route::get('/blog',function(){
+    return view('Frontend.pages.Blogpaage');
+})->name('blog');
