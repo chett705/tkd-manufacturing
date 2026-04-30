@@ -27,3 +27,6 @@ Route::get('/export',function(){
 Route::get('/blog',function(){
     return view('Frontend.pages.Blogpaage');
 })->name('blog');
+Route::get('/contact-us',function(){
+    return view('Frontend.pages.ContactUsPage');
+})->name('contact-us');

@@ -2,47 +2,69 @@
 
 @section('content')
     {{-- hero section --}}
+    {{-- hero section --}}
     <div class="h-[93vh] bg-cover bg-center text-white relative"
         style="background-image: url('https://wp-themes.com/wp-content/themes/production-factory/assets/images/banner-image.png');">
 
-        <div class="absolute bottom-0 right-0 w-8/10 overflow-hidden">
+        <div class="absolute inset-0 bg-black/40"></div>
 
-            <!-- background -->
+        <!-- RED STRIP -->
+        <div class="absolute bottom-0 right-0 w-full lg:w-8/10 overflow-hidden">
+
             <div class="absolute inset-0 bg-[#ED1C24]
         [clip-path:polygon(10%_0,100%_0,100%_100%,0_100%)]">
             </div>
 
-            <!-- content -->
-            <div class="relative z-10 px-40 py-6 flex items-center justify-between gap-5">
-                <div class="flex items-center gap-2 cursor-pointer">
-                    <i class="fa-solid fa-phone text-black"></i>
-                    <p>+855 12 590 666</p>
-                </div>
-                <div class="flex items-center gap-2 cursor-pointer">
-                    <i class="fa-solid fa-envelope text-black"></i>
-                    <p>tkd.manufacturing89@gmail.com</p>
-                </div>
-                <div class="flex items-center gap-2 cursor-pointer">
-                    <i class="fa-solid fa-bullhorn text-black"></i>
-                    <p>Delivering Industrial Excellence with Every Product.</p>
-                </div>
-            </div>
+            <div
+                class="relative z-10 px-5 md:pl-15 lg:pl-20 2xl:px-40 py-4 md:py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-sm md:text-base">
 
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-phone text-black"></i>
+                    <p class="break-all">+855 12 590 666</p>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-envelope text-black"></i>
+                    <p class="break-all">tkd.manufacturing89@gmail.com</p>
+                </div>
+
+                <div class="flex items-center gap-2 text-center md:text-left">
+                    <i class="fa-solid fa-bullhorn text-black"></i>
+                    <p class="text-xs md:text-sm lg:text-base">
+                        Delivering Industrial Excellence with Every Product.
+                    </p>
+                </div>
+
+            </div>
         </div>
 
-        <div class="container mx-auto px-3 flex items-center  h-full ">
+        <!-- HERO CONTENT -->
+        <div class="container mx-auto px-5 flex items-center h-full relative z-10">
+            <div class="w-full lg:w-1/2 flex flex-col gap-5 text-center md:text-left">
 
-            <div class="w-1/2 flex flex-col gap-5">
-                <h2 class="text-[44px]">Sustainable Rice-Flour Straws from Cambodia to the World</h2>
-                <p class="text-[22px]">Eco-friendly, biodegradable, and durable alternatives to plastic straws
-                    .</p>
-                <div class="flex items-center gap-5">
+                <h2
+                    class="text-xl sm:text-2xl md:text-4xl lg:text-[44px]
+                       leading-snug md:leading-tight font-bold break-words">
+                    Sustainable Rice-Flour Straws from Cambodia to the World
+                </h2>
+
+                <p class="text-sm sm:text-base md:text-lg lg:text-[22px] leading-relaxed">
+                    Eco-friendly, biodegradable, and durable alternatives to plastic straws.
+                </p>
+
+                <!-- Buttons -->
+                <div class="flex flex-col sm:flex-row gap-3 w-full">
                     <a href=""
-                        class="w-full text-[16px] font-semibold py-3 border border-[#ED1C24] flex items-center justify-center bg-white text-[#ED1C24]">Get
-                        a Quote</a>
+                        class="w-full sm:w-auto px-6 py-3 border border-[#ED1C24]
+                          bg-white text-[#ED1C24] font-semibold text-center">
+                        Get a Quote
+                    </a>
+
                     <a href=""
-                        class="w-full text-[16px] font-semibold py-3 border border-[#ED1C24] flex items-center justify-center bg-white text-[#ED1C24]">View
-                        Products</a>
+                        class="w-full sm:w-auto px-6 py-3 border border-[#ED1C24]
+                          bg-white text-[#ED1C24] font-semibold text-center">
+                        View Products
+                    </a>
                 </div>
             </div>
         </div>

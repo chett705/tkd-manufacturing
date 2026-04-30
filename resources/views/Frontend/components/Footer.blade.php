@@ -1,4 +1,4 @@
-<div class="bg-black pt-5 relative overflow-hidden mt-30">
+<div class=" pt-5 relative overflow-hidden mt-30">
 
     <!-- 🔵 GLOW (FIXED + PROPER ELLIPSE) -->
     {{-- <div
@@ -9,7 +9,7 @@
     </div> --}}
 
     <!-- MAIN CONTENT -->
-    <div class="relative z-10 bg-gradient-to-t from-[#1100FF]/30 to-black py-20">
+    <div class="relative z-10 bg-[#0B0B54] py-20">
 
         <div
             class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3
