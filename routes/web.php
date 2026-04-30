@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CertificateController;
@@ -67,5 +67,7 @@ Route::prefix('admin')
 
 //Route for frontend pages
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/activities', [ActivityController::class, 'show'])->name('activities');
+
 
 
