@@ -5,44 +5,65 @@
     <div class="h-[93vh] bg-cover bg-center text-white relative"
         style="background-image: url('https://wp-themes.com/wp-content/themes/production-factory/assets/images/banner-image.png');">
 
-        <div class="absolute bottom-0 right-0 w-8/10 overflow-hidden">
+        <div class="absolute inset-0 bg-black/40"></div>
 
-            <!-- background -->
+        <!-- RED STRIP -->
+        <div class="absolute bottom-0 right-0 w-full lg:w-8/10 overflow-hidden">
+
             <div class="absolute inset-0 bg-[#ED1C24]
         [clip-path:polygon(10%_0,100%_0,100%_100%,0_100%)]">
             </div>
 
-            <!-- content -->
-            <div class="relative z-10 px-40 py-6 flex items-center justify-between gap-5">
-                <div class="flex items-center gap-2 cursor-pointer">
-                    <i class="fa-solid fa-phone text-black"></i>
-                    <p>+855 12 590 666</p>
-                </div>
-                <div class="flex items-center gap-2 cursor-pointer">
-                    <i class="fa-solid fa-envelope text-black"></i>
-                    <p>tkd.manufacturing89@gmail.com</p>
-                </div>
-                <div class="flex items-center gap-2 cursor-pointer">
-                    <i class="fa-solid fa-bullhorn text-black"></i>
-                    <p>Delivering Industrial Excellence with Every Product.</p>
-                </div>
-            </div>
+            <div
+                class="relative z-10 px-5 md:pl-15 lg:pl-20 2xl:px-40 py-4 md:py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-sm md:text-base">
 
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-phone text-black"></i>
+                    <p class="break-all">+855 12 590 666</p>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-envelope text-black"></i>
+                    <p class="break-all">tkd.manufacturing89@gmail.com</p>
+                </div>
+
+                <div class="flex items-center gap-2 text-center md:text-left">
+                    <i class="fa-solid fa-bullhorn text-black"></i>
+                    <p class="text-xs md:text-sm lg:text-base">
+                        Delivering Industrial Excellence with Every Product.
+                    </p>
+                </div>
+
+            </div>
         </div>
 
-        <div class="container mx-auto px-3 flex items-center  h-full ">
+        <!-- HERO CONTENT -->
+        <div class="container mx-auto px-5 flex items-center h-full relative z-10">
+            <div class="w-full lg:w-1/2 flex flex-col gap-5 text-center md:text-left">
 
-            <div class="w-1/2 flex flex-col gap-5">
-                <h2 class="text-[44px]">Sustainable Rice-Flour Straws from Cambodia to the World</h2>
-                <p class="text-[22px]">Eco-friendly, biodegradable, and durable alternatives to plastic straws
-                    .</p>
-                <div class="flex items-center gap-5">
+                <h2
+                    class="text-xl sm:text-2xl md:text-4xl lg:text-[44px]
+                       leading-snug md:leading-tight font-bold break-words">
+                    Sustainable Rice-Flour Straws from Cambodia to the World
+                </h2>
+
+                <p class="text-sm sm:text-base md:text-lg lg:text-[22px] leading-relaxed">
+                    Eco-friendly, biodegradable, and durable alternatives to plastic straws.
+                </p>
+
+                <!-- Buttons -->
+                <div class="flex flex-col sm:flex-row gap-3 w-full">
                     <a href=""
-                        class="w-full text-[16px] font-semibold py-3 border border-[#ED1C24] flex items-center justify-center bg-white text-[#ED1C24]">Get
-                        a Quote</a>
+                        class="w-full sm:w-auto px-6 py-3 border border-[#ED1C24]
+                          bg-white text-[#ED1C24] font-semibold text-center">
+                        Get a Quote
+                    </a>
+
                     <a href=""
-                        class="w-full text-[16px] font-semibold py-3 border border-[#ED1C24] flex items-center justify-center bg-white text-[#ED1C24]">View
-                        Products</a>
+                        class="w-full sm:w-auto px-6 py-3 border border-[#ED1C24]
+                          bg-white text-[#ED1C24] font-semibold text-center">
+                        View Products
+                    </a>
                 </div>
             </div>
         </div>
@@ -51,9 +72,9 @@
     {{-- main product --}}
     <div class="min-h-[60vh] px-6 py-40 bg-[#0B0B54] ">
 
-        <div class="container mx-auto px-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-3 sm:gap-4">
 
                 <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-eXlyj9I5e2YDCeNauWU1_F-wkcC4bu7QGEaa5W74glPFho-Rk78WDf90It9LTt26ANHZ_DemR0zRCL4QW1uOhrwXYk0WmJcmFGalV_l6wnw_Ii5KXj22cBPDMqFcC86-SXIADjqGeF5SJUHogvgN3VrDXOgCwMeChKaSUJf3i_huaPDYg0E_ESoI2xLvB51C54sC9QJutHGaLQOqar5IeSZv6sUuMZh_hWfFnzDAxTnbAmR97Oc92p3NTOjyb6MZcc2V_N_aXmrD"
                     class="w-full  object-cover rounded-lg shadow-lg" />
@@ -139,7 +160,7 @@
 
     {{-- key products --}}
     <div class="py-20 relative">
-        <div class="absolute top-20 left-0 w-1/3 overflow-hidden">
+        <div class="absolute top-20 left-0 w-2/3 md:w-2/3 lg:w-1/3 overflow-hidden">
             <!-- background -->
             <div class="absolute inset-0 bg-[#ED1C24]
                 [clip-path:polygon(0_0,100%_0,90%_100%,0_100%)]">
@@ -151,7 +172,7 @@
         </div>
 
         {{-- card --}}
-        <div class="grid grid-cols-3 gap-10 py-30 container mx-auto ">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 py-40 md:py-30 container mx-auto px-5">
 
             <div class="group">
 

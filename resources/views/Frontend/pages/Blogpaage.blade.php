@@ -1,75 +1,149 @@
 @extends('Frontend.layouts.Main')
 
 @section('content')
-<section class="bg-gray-50 py-12">
-  <div class="max-w-7xl mx-auto px-6 lg:px-8">
-    <!-- Title -->
-    <h2 class="text-3xl font-bold text-gray-800 mb-6">
-      Rice Straws vs Paper Straws: Which Is Better for Your Business?
-    </h2>
+    <!-- HERO (keep but remove big blog title inside content area) -->
+    <div class="relative h-[70vh] w-full flex items-center justify-center bg-cover bg-center"
+        style="background-image: url('https://wp-themes.com/wp-content/themes/production-factory/assets/images/banner-image.png');">
 
-    <!-- Intro -->
-    <p class="text-gray-600 mb-10">
-      The Sustainable Shift: Moving away from single-use plastics, rice-based alternatives offer superior durability and customer experience compared to paper straws.
-    </p>
+        <div class="absolute inset-0 bg-black/50"></div>
 
-    <!-- Comparison Grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-      <!-- Rice Straws -->
-      <div class="bg-white shadow rounded-lg p-6 space-y-4">
-        <h3 class="text-xl font-semibold text-green-700">Rice Straws</h3>
-        <ul class="list-disc list-inside text-gray-600 space-y-2">
-          <li>Material: Rice flour & tapioca starch</li>
-          <li>Durability: 2–4 hours in liquid</li>
-          <li>Taste Impact: Neutral</li>
-          <li>Hot Drinks: Excellent resistance</li>
-          <li>Cold Drinks: Superior longevity</li>
-          <li>Eco-Friendly: 100% edible & compostable</li>
-          <li>Brand Image: Innovative premium</li>
-        </ul>
-      </div>
-
-      <!-- Paper Straws -->
-      <div class="bg-white shadow rounded-lg p-6 space-y-4">
-        <h3 class="text-xl font-semibold text-blue-700">Paper Straws</h3>
-        <ul class="list-disc list-inside text-gray-600 space-y-2">
-          <li>Material: Kraft paper & adhesive binders</li>
-          <li>Durability: 20–40 minutes in liquid</li>
-          <li>Taste Impact: Possible paper-like flavor</li>
-          <li>Hot Drinks: Rapid breakdown</li>
-          <li>Cold Drinks: Standard performance</li>
-          <li>Eco-Friendly: Recyclable if clean</li>
-          <li>Brand Image: Standard eco-conscious</li>
-        </ul>
-      </div>
-
-      <!-- Sidebar CTA -->
-      <div class="bg-white shadow rounded-lg p-6 flex flex-col justify-between">
-        <div>
-          <h3 class="text-xl font-semibold text-gray-800 mb-4">Looking for Bulk Supply?</h3>
-          <p class="text-gray-600 mb-6">
-            TK&D Manufacturing offers sustainable solutions with ISO 9001:2015 certification, 100% biodegradable products, and a 24-month shelf life.
-          </p>
+        <!-- Optional: small subtitle only (no big title like before) -->
+        <div class="relative z-10 text-center px-6">
+            <p class="text-white text-lg md:text-2xl font-semibold">
+                Sustainable Alternatives for Modern Businesses
+            </p>
         </div>
-        <div class="space-y-3">
-          <a href="#" class="block text-center bg-green-600 text-white font-semibold py-2 px-4 rounded hover:bg-green-700">
-            Request a Quotation
-          </a>
-          <a href="#" class="block text-center bg-blue-600 text-white font-semibold py-2 px-4 rounded hover:bg-blue-700">
-            Contact Us Today
-          </a>
-        </div>
-      </div>
     </div>
 
-    <!-- Conclusion -->
-    <div class="mt-12">
-      <h3 class="text-xl font-semibold text-gray-800">Conclusion: The Engineering Verdict</h3>
-      <p class="text-gray-600 mt-2">
-        Rice straws represent a significant leap in material science, offering better longevity and customer retention for high-volume businesses.
-      </p>
-    </div>
-  </div>
-</section>
+    <!-- COMPARISON SECTION -->
+    <section class=" py-14">
+        <div class="container mx-auto px-6 lg:px-8">
 
+            <!-- Table Card -->
+            <div class=" ">
+
+                <!-- Header -->
+                <div class=" px-6 py-4 text-center my-10">
+                    <h2 class="text-xl md:text-2xl font-bold text-gray-800">
+                        Rice Straws vs Paper Straws Comparison
+                    </h2>
+                    <p class="text-gray-600 text-sm mt-1">
+                        A clear breakdown to help your business choose the right eco solution
+                    </p>
+                </div>
+
+                <!-- Table -->
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm md:text-base">
+                        <thead class=" text-gray-700">
+                            <tr class="border-b">
+                                <th class="text-left px-6 py-4"></th>
+                                <th class="text-left px-6 py-4 text-green-700">Rice Straws</th>
+                                <th class="text-left px-6 py-4 text-blue-700">Paper Straws</th>
+                            </tr>
+                        </thead>
+
+                        <tbody class="divide-y">
+
+                            <tr>
+                                <td class="px-6 py-4 font-medium">Material</td>
+                                <td class="px-6 py-4">Rice flour & tapioca starch</td>
+                                <td class="px-6 py-4">Paper pulp</td>
+                            </tr>
+
+                            <tr>
+                                <td class="px-6 py-4 font-medium">Durability</td>
+                                <td class="px-6 py-4">40–120 minutes stable use</td>
+                                <td class="px-6 py-4">10–30 minutes before soggy</td>
+                            </tr>
+
+                            <tr>
+                                <td class="px-6 py-4 font-medium">Taste Impact</td>
+                                <td class="px-6 py-4">No effect on flavor</td>
+                                <td class="px-6 py-4">May affect taste</td>
+                            </tr>
+
+                            <tr>
+                                <td class="px-6 py-4 font-medium">Hot Drinks</td>
+                                <td class="px-6 py-4">Strong performance</td>
+                                <td class="px-6 py-4">Breaks down quickly</td>
+                            </tr>
+
+                            <tr>
+                                <td class="px-6 py-4 font-medium">Cold Drinks</td>
+                                <td class="px-6 py-4">Long-lasting</td>
+                                <td class="px-6 py-4">Weakens over time</td>
+                            </tr>
+
+                            <tr>
+                                <td class="px-6 py-4 font-medium">Eco-Friendly</td>
+                                <td class="px-6 py-4">100% biodegradable & compostable</td>
+                                <td class="px-6 py-4">Biodegradable but processed</td>
+                            </tr>
+
+                            <tr>
+                                <td class="px-6 py-4 font-medium">Customer Experience</td>
+                                <td class="px-6 py-4">Smooth & premium feel</td>
+                                <td class="px-6 py-4">Soft after soaking</td>
+                            </tr>
+
+                            <tr class="border-b">
+                                <td class="px-6 py-4 font-medium">Brand Image</td>
+                                <td class="px-6 py-4">Innovative premium solution</td>
+                                <td class="px-6 py-4">Standard eco option</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- CONCLUSION SECTION -->
+            <section class="py-10">
+                <div class="container mx-auto px-6 lg:px-8">
+
+                    <div class="bg-white border border-gray-200 rounded-lg p-6 md:p-10 shadow-sm">
+
+                        <h3 class="text-lg md:text-xl font-bold text-gray-800 text-center">
+                            🎯 Conclusion
+                        </h3>
+
+                        <p class="text-gray-600 text-sm md:text-base mt-4 leading-relaxed text-center max-w-4xl mx-auto">
+                            While both options aim to reduce plastic waste, rice straws offer superior durability, a better
+                            user
+                            experience, and stronger eco value. This makes them a more reliable long-term choice for
+                            businesses in
+                            the F&B industry that care about both sustainability and customer satisfaction.
+                        </p>
+
+                    </div>
+
+                </div>
+            </section>
+
+
+
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="mt-10 text-center bg-[#0B0B54]">
+        <div class=" container mx-auto py-10">
+            <h3 class="text-lg md:text-xl font-semibold text-white ">
+                Need Bulk Supply for Your Business?
+            </h3>
+            <p class="text-white mt-2">
+                Get sustainable rice straw solutions tailored for restaurants, cafés, and distributors.
+            </p>
+
+            <div class="mt-5 flex flex-col sm:flex-row justify-center gap-3">
+                <a href="#" class="px-6 py-3 bg-green-600 text-white rounded-md hover:bg-green-700">
+                    Request Quotation
+                </a>
+                <a href="#" class="px-6 py-3 bg-gray-800 text-white rounded-md hover:bg-black">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
 @endsection
