@@ -30,3 +30,6 @@ Route::get('/blog',function(){
 Route::get('/contact-us',function(){
     return view('Frontend.pages.ContactUsPage');
 })->name('contact-us');
+Route::get('/activities',function(){
+    return view('Frontend.pages.Activities');
+})->name('activities');
