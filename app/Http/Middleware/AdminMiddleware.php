@@ -5,22 +5,26 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Auth;
 
 class AdminMiddleware
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  Closure(Request): (Response)  $next
-     */
     public function handle(Request $request, Closure $next): Response
     {
-        if ($request->session()->get('is_admin') === true) {
-            return $next($request);
+        // 1. ពិនិត្យថាអ្នកប្រើបានចូលហើយឬនៅ
+        if (!Auth::check()) {
+            return redirect()->route('login')
+                ->with('error', 'សូមចូលគណនីជាមុនសិន។');
         }
 
-        // បើមិនទាន់ចូល → ត្រឡប់ទៅ Login Page
-        return redirect()->route('login')
-                         ->with('error', 'សូមចូលគណនីជាមុនដើម្បីចូលប្រើ Admin Panel។');
+        // 2. ពិនិត្យ Role
+        $user = Auth::user();
+        
+        if ($user->role !== 'admin') {
+            abort(403, 'អ្នកមិនមានសិទ្ធិចូលប្រើទំព័រនេះទេ។');
+        }
+
+        // 3. បើគ្រប់លក្ខខណ្ឌត្រូវ → បន្តទៅ
+        return $next($request);
     }
 }

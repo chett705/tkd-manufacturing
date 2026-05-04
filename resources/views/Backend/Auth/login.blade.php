@@ -19,12 +19,12 @@
                     @csrf
                     <div>
                         <label class="block text-sm font-semibold text-slate-700">Email address</label>
-                        <input type="text" name="username" required class="mt-2 block w-full rounded-lg border border-slate-300 px-3 py-2.5 text-slate-900 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none">
+                        <input type="text" name="username" required class="mt-2 block w-full rounded-lg border border-slate-300 px-3 py-2.5 text-slate-900 focus:border-[#ED1C24] focus:ring-1 focus:ring-[#ED1C24] outline-none">
                     </div>
 
                     <div>
                         <label class="block text-sm font-semibold text-slate-700">Password</label>
-                        <input type="password" name="password" required class="mt-2 block w-full rounded-lg border border-slate-300 px-3 py-2.5 text-slate-900 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none">
+                        <input type="password" name="password" required class="mt-2 block w-full rounded-lg border border-slate-300 px-3 py-2.5 text-slate-900 focus:border-[#ED1C24] focus:ring-1 focus:ring-[#ED1C24] outline-none">
                     </div>
 
                     <div class="flex items-center">

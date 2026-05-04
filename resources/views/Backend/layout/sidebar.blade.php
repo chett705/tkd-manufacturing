@@ -1,5 +1,5 @@
-<aside id="sidebar" 
-       class="w-72 bg-white border-r border-gray-200 h-full flex flex-col 
+<aside id="sidebar"
+    class="w-72 bg-white border-r border-gray-200 h-full flex flex-col 
               fixed lg:relative inset-y-0 left-0 z-50 lg:z-auto
               -translate-x-full lg:translate-x-0 transition-all duration-300">
 
@@ -58,8 +58,9 @@
                 </a>
             </li>
 
-            <li class="mt-8">
-                <div class="px-5 text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">Content</div>
+            <!-- ==================== CONTENT MANAGEMENT ==================== -->
+            <li class="mt-10">
+                <div class="px-5 text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">Content Management</div>
             </li>
 
             <!-- Activities -->
@@ -92,7 +93,33 @@
                 </a>
             </li>
 
-            <li class="mt-8">
+            <li>
+                <a href="{{ route('admin.users.index') }}"
+                    class="flex items-center gap-3 px-5 py-3.5 rounded-2xl hover:bg-gray-100 transition 
+                   {{ request()->routeIs('admin.users.*') ? 'bg-blue-50 text-blue-700 font-medium' : 'text-gray-700' }}">
+                    <i class="fas fa-users w-5"></i>
+                    <span>Users</span>
+                </a>
+            </li>
+           
+            <li class="mt-10">
+                <div class="px-5 text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">Section</div>
+            </li>
+            <li>
+                <a href="{{ route('admin.home-sections.index') }}"
+                    class="flex items-center gap-3 px-5 py-3.5 rounded-2xl hover:bg-gray-100 transition 
+               {{ request()->routeIs('admin.home-sections.*') ? 'bg-blue-50 text-blue-700 font-medium' : 'text-gray-700' }}">
+                    <i class="fas fa-layer-group w-5"></i> <!-- ប្តូរអាយខនឱ្យសមស្រប -->
+                    <span>Home Page Sections</span>
+                </a>
+            </li>
+
+            
+
+
+
+            <!-- ==================== CUSTOMER SECTION ==================== -->
+            <li class="mt-10">
                 <div class="px-5 text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">Customer</div>
             </li>
 

@@ -4,8 +4,12 @@
 
 @section('content')
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    @if(session('success'))
+        <div class="mb-6 rounded-2xl bg-green-100 px-4 py-3 text-green-700">
+            {{ session('success') }}
+        </div>
+    @endif
 
-    <!-- Header -->
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
         <div>
             <h1 class="text-3xl font-bold text-gray-900">Activity Management</h1>
@@ -19,10 +23,7 @@
         </a>
     </div>
 
-    <!-- Activities Table -->
     <div class="bg-white rounded-3xl shadow-sm overflow-hidden">
-        
-        <!-- Desktop & Tablet Table -->
         <div class="hidden md:block overflow-x-auto">
             <table class="w-full min-w-full">
                 <thead class="bg-gray-50 border-b">
@@ -34,13 +35,10 @@
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-100">
-                    
-                    <!-- Dummy Activity 1 -->
+                    @forelse($activities as $activity)
                     <tr class="hover:bg-gray-50 transition">
-                        <td class="px-6 py-5 font-semibold text-gray-800">Rice Straw Manufacturing Process</td>
-                        <td class="px-6 py-5 text-sm text-gray-600">
-                            Sourcing local rice straw → Cleaning → Cutting → Quality Control → Packaging
-                        </td>
+                        <td class="px-6 py-5 font-semibold text-gray-800">{{ $activity->title }}</td>
+                        <td class="px-6 py-5 text-sm text-gray-600">{{ $activity->description ?: 'No description' }}</td>
                         <td class="px-6 py-5">
                             <span class="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium bg-green-100 text-green-700">
                                 Active
@@ -48,78 +46,57 @@
                         </td>
                         <td class="px-6 py-5 text-center">
                             <div class="flex justify-center gap-4">
-                                <a href="#" class="text-blue-600 hover:text-blue-700 text-xl"><i class="fas fa-edit"></i></a>
-                                <button onclick="alert('Deleted! (Testing)')" class="text-red-600 hover:text-red-700 text-xl">
-                                    <i class="fas fa-trash"></i>
-                                </button>
+                                <a href="{{ route('admin.activities.edit', $activity) }}" class="text-blue-600 hover:text-blue-700 text-xl">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <form action="{{ route('admin.activities.destroy', $activity) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" onclick="return confirm('Delete this activity?')" class="text-red-600 hover:text-red-700 text-xl">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
                             </div>
                         </td>
                     </tr>
-
-                    <!-- Dummy Activity 2 -->
-                    <tr class="hover:bg-gray-50 transition">
-                        <td class="px-6 py-5 font-semibold text-gray-800">Product Quality Testing</td>
-                        <td class="px-6 py-5 text-sm text-gray-600">
-                            Laboratory testing for food safety, durability and eco-friendly standards
-                        </td>
-                        <td class="px-6 py-5">
-                            <span class="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium bg-green-100 text-green-700">
-                                Active
-                            </span>
-                        </td>
-                        <td class="px-6 py-5 text-center">
-                            <div class="flex justify-center gap-4">
-                                <a href="#" class="text-blue-600 hover:text-blue-700 text-xl"><i class="fas fa-edit"></i></a>
-                                <button onclick="alert('Deleted! (Testing)')" class="text-red-600 hover:text-red-700 text-xl">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </div>
-                        </td>
+                    @empty
+                    <tr>
+                        <td colspan="4" class="px-6 py-10 text-center text-gray-500">No activities found.</td>
                     </tr>
-
+                    @endforelse
                 </tbody>
             </table>
         </div>
 
-        <!-- Mobile Card View -->
         <div class="md:hidden space-y-4 p-4">
-            
-            <!-- Activity 1 -->
+            @forelse($activities as $activity)
             <div class="bg-white border border-gray-100 rounded-3xl p-5 shadow-sm">
                 <div class="flex-1">
-                    <h3 class="font-semibold text-lg">Rice Straw Manufacturing Process</h3>
-                    <p class="text-gray-600 text-sm mt-2 line-clamp-3">
-                        Sourcing local rice straw → Cleaning → Cutting → Quality Control → Packaging
-                    </p>
+                    <h3 class="font-semibold text-lg">{{ $activity->title }}</h3>
+                    <p class="text-gray-600 text-sm mt-2 line-clamp-3">{{ $activity->description ?: 'No description' }}</p>
                     <div class="mt-4 flex justify-between items-center">
                         <span class="bg-green-100 text-green-700 px-4 py-1 rounded-full text-sm">Active</span>
                         <div class="flex gap-4">
-                            <a href="#" class="text-blue-600"><i class="fas fa-edit"></i></a>
-                            <button onclick="alert('Deleted!')" class="text-red-600"><i class="fas fa-trash"></i></button>
+                            <a href="{{ route('admin.activities.edit', $activity) }}" class="text-blue-600">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <form action="{{ route('admin.activities.destroy', $activity) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" onclick="return confirm('Delete this activity?')" class="text-red-600">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Activity 2 -->
-            <div class="bg-white border border-gray-100 rounded-3xl p-5 shadow-sm">
-                <div class="flex-1">
-                    <h3 class="font-semibold text-lg">Product Quality Testing</h3>
-                    <p class="text-gray-600 text-sm mt-2 line-clamp-3">
-                        Laboratory testing for food safety, durability and eco-friendly standards
-                    </p>
-                    <div class="mt-4 flex justify-between items-center">
-                        <span class="bg-green-100 text-green-700 px-4 py-1 rounded-full text-sm">Active</span>
-                        <div class="flex gap-4">
-                            <a href="#" class="text-blue-600"><i class="fas fa-edit"></i></a>
-                            <button onclick="alert('Deleted!')" class="text-red-600"><i class="fas fa-trash"></i></button>
-                        </div>
-                    </div>
-                </div>
+            @empty
+            <div class="rounded-3xl border border-dashed border-gray-300 p-6 text-center text-gray-500">
+                No activities found.
             </div>
-
+            @endforelse
         </div>
-
     </div>
 </div>
 @endsection
