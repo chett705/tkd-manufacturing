@@ -2,7 +2,6 @@
 
 @section('content')
     {{-- hero section --}}
-    {{-- hero section --}}
     <div class="h-[93vh] bg-cover bg-center text-white relative"
         style="background-image: url('https://wp-themes.com/wp-content/themes/production-factory/assets/images/banner-image.png');">
 
@@ -72,160 +71,254 @@
 
     {{-- key products --}}
     <div class="py-20 relative">
-        <div class="absolute top-20 left-0 w-1/3 overflow-hidden">
-            <!-- background -->
+
+        <!-- SECTION TITLE -->
+        <div class="absolute top-10 md:top-20 left-0 w-2/3 md:w-1/3 overflow-hidden">
+
             <div class="absolute inset-0 bg-[#ED1C24]
-                [clip-path:polygon(0_0,100%_0,90%_100%,0_100%)]">
+            [clip-path:polygon(0_0,100%_0,90%_100%,0_100%)]">
             </div>
-            <!-- content aligned EXACTLY with navbar (right side of 1400px) -->
-            <div class="relative z-10 px-6 py-3 flex justify-center">
-                <h1 class="text-2xl font-bold text-white capitalize">our key products</h1>
-            </div>
-        </div>
 
-        {{-- card --}}
-        <div class="grid grid-cols-3 gap-10 py-30 container mx-auto ">
-
-            <div class="group">
-
-                <!-- IMAGE WRAPPER -->
-                <div class="relative ">
-
-                    <!-- IMAGE -->
-                    <img src="https://images.pexels.com/photos/6801215/pexels-photo-6801215.jpeg"
-                        class="w-full h-[300px] object-cover">
-
-                    <!-- TOP SLANTED BAR -->
-                    <div
-                        class="absolute top-[-13px] right-0 w-[85%] h-[26px] bg-[#0B0B54] z-50 transition-all duration-500 group-hover:w-[90%] group-hover:bg-[#ED1C24] [clip-path:polygon(0_0,100%_0,100%_100%,10%_100%)]">
-                    </div>
-
-                    <!-- BOTTOM SLANTED BAR -->
-                    <div
-                        class="absolute bottom-[-13px] left-0 w-[85%] h-[26px]
-            bg-[#0B0B54]
-            z-50
-            transition-all duration-500
-            group-hover:w-[90%]
-            group-hover:bg-[#ED1C24]
-            [clip-path:polygon(0_0,90%_0,100%_100%,0_100%)]">
-                    </div>
-
-                </div>
-
-                <!-- PRODUCT INFO -->
-                <div class="flex flex-col justify-center items-center gap-3 py-7 px-5">
-                    <p class="font-semibold text-[19px] line-clamp-1">Title</p>
-                    <p class="line-clamp-3 text-center">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit...
-                    </p>
-                    <a href=""
-                        class="flex items-center justify-center w-full py-2 border bg-[#0B0B54] hover:bg-[#ED1C24] transition-all duration-500 text-white">Explore
-                        Product</a>
-                </div>
-
+            <div class="relative z-10 px-4 md:px-6 py-3 flex justify-start md:justify-center">
+                <h1 class="text-lg md:text-2xl font-bold text-white capitalize">
+                    our key products
+                </h1>
             </div>
 
         </div>
 
+        <!-- GRID -->
+        <div class="container mx-auto px-5 pt-24 md:pt-30">
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+
+                <!-- CARD -->
+                <div class="group">
+
+                    <div class="relative">
+
+                        <img src="https://images.pexels.com/photos/6801215/pexels-photo-6801215.jpeg"
+                            class="w-full h-[220px] sm:h-[260px] md:h-[300px] object-cover">
+
+                        <!-- TOP BAR -->
+                        <div
+                            class="absolute top-[-10px] right-0 w-[85%] h-[22px] bg-[#0B0B54] z-50 transition-all duration-500 group-hover:w-[90%] group-hover:bg-[#ED1C24]
+                        [clip-path:polygon(0_0,100%_0,100%_100%,10%_100%)]">
+                        </div>
+
+                        <!-- BOTTOM BAR -->
+                        <div
+                            class="absolute bottom-[-10px] left-0 w-[85%] h-[22px] bg-[#0B0B54] z-50 transition-all duration-500 group-hover:w-[90%] group-hover:bg-[#ED1C24]
+                        [clip-path:polygon(0_0,90%_0,100%_100%,0_100%)]">
+                        </div>
+
+                    </div>
+
+                    <!-- INFO -->
+                    <div class="flex flex-col justify-center items-center gap-3 py-6 px-4">
+
+                        <p class="font-semibold text-[17px] md:text-[19px] line-clamp-1">Title</p>
+
+                        <p class="line-clamp-3 text-center text-sm md:text-base">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores, nostrum perspiciatis nobis nemo doloribus dolore excepturi corporis voluptatem vel consectetur sint sequi voluptates repellat, quod, cupiditate ea totam dolor pariatur.
+                        </p>
+
+                        <a href=""
+                            class="w-full text-center py-2 border bg-[#0B0B54] hover:bg-[#ED1C24] transition-all duration-500 text-white">
+                            Explore Product
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- DUPLICATE CARD 2 -->
+                <div class="group">
+                    <div class="relative">
+                        <img src="https://images.pexels.com/photos/6801215/pexels-photo-6801215.jpeg"
+                            class="w-full h-[220px] sm:h-[260px] md:h-[300px] object-cover">
+
+                        <div
+                            class="absolute top-[-10px] right-0 w-[85%] h-[22px] bg-[#0B0B54] z-50
+                        transition-all duration-500 group-hover:w-[90%] group-hover:bg-[#ED1C24]
+                        [clip-path:polygon(0_0,100%_0,100%_100%,10%_100%)]">
+                        </div>
+
+                        <div
+                            class="absolute bottom-[-10px] left-0 w-[85%] h-[22px] bg-[#0B0B54] z-50
+                        transition-all duration-500 group-hover:w-[90%] group-hover:bg-[#ED1C24]
+                        [clip-path:polygon(0_0,90%_0,100%_100%,0_100%)]">
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col items-center gap-3 py-6 px-4">
+                        <p class="font-semibold text-[17px] md:text-[19px]">Title</p>
+                        <p class="text-center text-sm md:text-base line-clamp-3">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore ipsum cupiditate labore consequuntur, in at unde sed reiciendis repellat harum quae, dolor fugiat delectus aperiam, eius adipisci! Molestias, quidem inventore.
+                        </p>
+                        <a href="" class="w-full text-center py-2 bg-[#0B0B54] text-white hover:bg-[#ED1C24]">
+                            Explore Product
+                        </a>
+                    </div>
+                </div>
+
+                <!-- CARD 3 (same structure) -->
+                <div class="group">
+                    <div class="relative">
+                        <img src="https://images.pexels.com/photos/6801215/pexels-photo-6801215.jpeg"
+                            class="w-full h-[220px] sm:h-[260px] md:h-[300px] object-cover">
+
+                        <div
+                            class="absolute top-[-10px] right-0 w-[85%] h-[22px] bg-[#0B0B54] z-50
+                        transition-all duration-500 group-hover:w-[90%] group-hover:bg-[#ED1C24]
+                        [clip-path:polygon(0_0,100%_0,100%_100%,10%_100%)]">
+                        </div>
+
+                        <div
+                            class="absolute bottom-[-10px] left-0 w-[85%] h-[22px] bg-[#0B0B54] z-50
+                        transition-all duration-500 group-hover:w-[90%] group-hover:bg-[#ED1C24]
+                        [clip-path:polygon(0_0,90%_0,100%_100%,0_100%)]">
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col items-center gap-3 py-6 px-4">
+                        <p class="font-semibold text-[17px] md:text-[19px]">Title</p>
+                        <p class="text-center text-sm md:text-base line-clamp-3">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi sequi a molestiae fuga consectetur nemo expedita voluptas. Pariatur, eius ullam maxime ipsa nihil deleniti sequi cupiditate repudiandae alias sed tempore?
+                        </p>
+                        <a href="" class="w-full text-center py-2 bg-[#0B0B54] text-white hover:bg-[#ED1C24]">
+                            Explore Product
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
     </div>
 
     {{-- why choose us --}}
-    <div class="relative h-[80vh] bg-cover bg-top"
+    <div class="relative h-[110vh] md:h-[70vh] lg:h-[80vh] bg-cover bg-top"
         style="background-image: url('https://wp-themes.com/wp-content/themes/production-factory/assets/images/section-img.png');">
 
         <!-- DARK OVERLAY -->
         <div class="absolute inset-0 bg-[#0B0B54]/75"></div>
 
-        <!-- CONTENT (optional) -->
-        <div class="relative z-10 h-full text-white py-20">
-            <div class="flex items-center justify-center gap-10">
-                {{-- images --}}
-                <div class="flex items-center justify-center gap-3">
+        <!-- CONTENT -->
+        <div class="relative z-10 h-full text-white py-10 lg:py-20">
+
+            <div class="flex flex-col lg:flex-row items-center justify-center gap-10">
+
+                {{-- images (HIDE ON MOBILE/TABLET) --}}
+                <div class="hidden lg:flex items-center justify-center gap-3">
                     <div class="flex flex-col items-center gap-3">
                         <img src="https://wp-themes.com/wp-content/themes/production-factory/assets/images/about01.png"
-                            alt="" class="rounded-md">
+                            class="rounded-md">
                         <img src="https://wp-themes.com/wp-content/themes/production-factory/assets/images/about02.png"
-                            alt="" class="rounded-md">
+                            class="rounded-md">
                     </div>
+
                     <img src="https://wp-themes.com/wp-content/themes/production-factory/assets/images/about03.png"
-                        alt="" class="rounded-md">
+                        class="rounded-md">
                 </div>
-                {{-- text --}}
-                <div class="flex flex-col gap-5">
+
+                {{-- text (FULL WIDTH ON MOBILE) --}}
+                <div class="flex flex-col gap-5 w-full lg:w-auto px-5 lg:px-0">
+
                     <div>
-                        <p class="text-[#ED1C24] font-bold text-[19px]">Why Choose Us</p>
-                        <p class="text-[28px] font-bold">We want to give you the best service</p>
+                        <p class="text-[#ED1C24] font-bold text-[16px] lg:text-[19px]">
+                            Why Choose Us
+                        </p>
+                        <p class="text-[22px] lg:text-[28px] font-bold">
+                            We want to give you the best service
+                        </p>
                     </div>
-                    <p class="line-clamp-3 w-[770px]">Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s</p>
+
+                    <p class="text-sm lg:text-base max-w-full lg:w-[770px]">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                        industry's standard dummy text ever since the 1500s
+                    </p>
+
                     {{-- icon & text --}}
-                    <div class="grid grid-cols-2 gap-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+
                         <!-- item -->
                         <div class="flex flex-col gap-3 items-start">
                             <img src="{{ asset('icons/biodegradable.png') }}"
-                                class="w-10 h-10 object-contain filter brightness-0 invert">
+                                class="w-8 h-8 lg:w-10 lg:h-10 object-contain filter brightness-0 invert">
 
                             <div class="flex flex-col">
-                                <p class="text-[19px] font-bold">100% biodegradable products</p>
-                                <p class="text-sm line-clamp-2 w-[300px]">
+                                <p class="text-base lg:text-[19px] font-bold">
+                                    100% biodegradable products
+                                </p>
+                                <p class="text-sm">
                                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                                 </p>
                             </div>
                         </div>
 
-                        <!-- duplicate item -->
+                        <!-- item -->
                         <div class="flex flex-col gap-3 items-start">
                             <img src="{{ asset('icons/security (1).png') }}"
-                                class="w-10 h-10 object-contain filter brightness-0 invert">
+                                class="w-8 h-8 lg:w-10 lg:h-10 object-contain filter brightness-0 invert">
 
                             <div class="flex flex-col">
-                                <p class="text-[19px] font-bold">Strong & durable</p>
-                                <p class="text-sm line-clamp-2 w-[300px]">
+                                <p class="text-base lg:text-[19px] font-bold">
+                                    Strong & durable
+                                </p>
+                                <p class="text-sm">
                                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                                 </p>
                             </div>
                         </div>
 
-                        <!-- duplicate item -->
+                        <!-- item -->
                         <div class="flex flex-col gap-3 items-start">
                             <img src="{{ asset('icons/dollar.png') }}"
-                                class="w-10 h-10 object-contain filter brightness-0 invert">
+                                class="w-8 h-8 lg:w-10 lg:h-10 object-contain filter brightness-0 invert">
 
                             <div class="flex flex-col">
-                                <p class="text-[19px] font-bold">Competitive pricing</p>
-                                <p class="text-sm line-clamp-2 w-[300px]">
+                                <p class="text-base lg:text-[19px] font-bold">
+                                    Competitive pricing
+                                </p>
+                                <p class="text-sm">
                                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                                 </p>
                             </div>
                         </div>
 
-                        <!-- duplicate item -->
+                        <!-- item -->
                         <div class="flex flex-col gap-3 items-start">
                             <img src="{{ asset('icons/global-shipping.png') }}"
-                                class="w-10 h-10 object-contain filter brightness-0 invert">
+                                class="w-8 h-8 lg:w-10 lg:h-10 object-contain filter brightness-0 invert">
 
                             <div class="flex flex-col">
-                                <p class="text-[19px] font-bold">Export-ready production</p>
-                                <p class="text-sm line-clamp-2 w-[300px]">
+                                <p class="text-base lg:text-[19px] font-bold">
+                                    Export-ready production
+                                </p>
+                                <p class="text-sm">
                                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                                 </p>
                             </div>
                         </div>
 
-                        <!-- duplicate item -->
-                        <div class="flex flex-col gap-3 items-start">
+                        <!-- item -->
+                        <div class="flex flex-col gap-3 items-start sm:col-span-2 lg:col-span-1">
                             <img src="{{ asset('icons/development.png') }}"
-                                class="w-10 h-10 object-contain filter brightness-0 invert">
+                                class="w-8 h-8 lg:w-10 lg:h-10 object-contain filter brightness-0 invert">
 
                             <div class="flex flex-col">
-                                <p class="text-[19px] font-bold">OEM/ODM</p>
-                                <p class="text-sm line-clamp-2 w-[300px]">
+                                <p class="text-base lg:text-[19px] font-bold">
+                                    OEM/ODM
+                                </p>
+                                <p class="text-sm">
                                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                                 </p>
                             </div>
                         </div>
+
                     </div>
+
                 </div>
             </div>
         </div>
@@ -257,7 +350,7 @@
             <div class="overflow-hidden">
                 <div id="carousel" class="flex transition-transform duration-500 ease-in-out">
 
-                    <div class="w-1/3 flex-shrink-0 px-2">
+                    <div class="w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2">
                         <div class="border rounded-md p-3">
                             <p class="text-center font-bold pb-3">ISO & HACCP aligned</p>
                             <p class="text-center line-clamp-5">Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -267,7 +360,7 @@
                         </div>
                     </div>
 
-                    <div class="w-1/3 flex-shrink-0 px-2">
+                    <div class="w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2">
                         <div class="border rounded-md p-3">
                             <p class="text-center font-bold pb-3">Food Safety</p>
                             <p class="text-center line-clamp-5">Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -277,7 +370,7 @@
                         </div>
                     </div>
 
-                    <div class="w-1/3 flex-shrink-0 px-2">
+                    <div class="w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2">
                         <div class="border rounded-md p-3">
                             <p class="text-center font-bold pb-3">Quality Control</p>
                             <p class="text-center line-clamp-5">Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -287,7 +380,7 @@
                         </div>
                     </div>
 
-                    <div class="w-1/3 flex-shrink-0 px-2">
+                    <div class="w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2">
                         <div class="border rounded-md p-3">
                             <p class="text-center font-bold pb-3">Export Standard</p>
                             <p class="text-center line-clamp-5">Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -304,197 +397,227 @@
     </div>
 
     {{-- Markets We Serve --}}
-    <div class="mt-20 bg-[#F0ECF3] h-[60vh]">
-        <div class="flex justify-between px-30 py-20">
-            <div class="flex flex-col gap-10">
-                <div>
-                    <p class="uppercase text-lg text-[#ED1C24] font-bold">our reach</p>
-                    <p>Serving local markets and global economy</p>
-                </div>
-                <div>
-                    <div class="text-[#ED1C24] flex items-center gap-5">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <p>Cambodia</p>
+    <div class="mt-20 bg-[#F0ECF3]">
+
+        <div class="container mx-auto px-5 py-10 lg:py-20">
+
+            <div class="flex flex-col lg:flex-row justify-between gap-10">
+
+                <!-- LEFT CONTENT -->
+                <div class="flex flex-col gap-10 w-full lg:w-1/2">
+
+                    <div>
+                        <p class="uppercase text-lg text-[#ED1C24] font-bold">our reach</p>
+                        <p class="text-base lg:text-lg">
+                            Serving local markets and global economy
+                        </p>
                     </div>
-                    <ul class="grid grid-cols-2 gap-10 capitalize mt-5">
-                        <li class="flex items-center">
-                            <span class="mr-2">■</span>
-                            <span>cafes</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="mr-2">■</span>
-                            <span>hotels</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="mr-2">■</span>
-                            <span>supermarkets</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="flex flex-col gap-3">
-                    <div class="text-[#ED1C24] flex items-center gap-5">
-                        <i class="fa-solid fa-earth-europe"></i>
-                        <p>International</p>
+
+                    <!-- Cambodia -->
+                    <div>
+                        <div class="text-[#ED1C24] flex items-center gap-5">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <p>Cambodia</p>
+                        </div>
+
+                        <ul class="grid grid-cols-2 gap-5 lg:gap-10 capitalize mt-5">
+                            <li class="flex items-center">
+                                <span class="mr-2">■</span>
+                                <span>cafes</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="mr-2">■</span>
+                                <span>hotels</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="mr-2">■</span>
+                                <span>supermarkets</span>
+                            </li>
+                        </ul>
                     </div>
-                    <p>Strategic partnerships across key regions with full export documentation<br /> support.</p>
-                    <div class="flex items-center gap-5">
-                        <p class="px-4 py-1 border border-gray-400 bg-white">Australia</p>
-                        <p class="px-4 py-1 border border-gray-400 bg-white">Asia</p>
-                        <p class="px-4 py-1 border border-gray-400 bg-white">Europe</p>
-                        <p class="px-4 py-1 border border-gray-400 bg-white">Global</p>
+
+                    <!-- International -->
+                    <div class="flex flex-col gap-3">
+                        <div class="text-[#ED1C24] flex items-center gap-5">
+                            <i class="fa-solid fa-earth-europe"></i>
+                            <p>International</p>
+                        </div>
+
+                        <p class="text-sm lg:text-base">
+                            Strategic partnerships across key regions with full export documentation support.
+                        </p>
+
+                        <div class="flex flex-wrap items-center gap-3 lg:gap-5">
+                            <p class="px-4 py-1 border border-gray-400 bg-white">Australia</p>
+                            <p class="px-4 py-1 border border-gray-400 bg-white">Asia</p>
+                            <p class="px-4 py-1 border border-gray-400 bg-white">Europe</p>
+                            <p class="px-4 py-1 border border-gray-400 bg-white">Global</p>
+                        </div>
                     </div>
 
                 </div>
-            </div>
-            <div>
+
+                <!-- RIGHT PLACEHOLDER (MAP LATER) -->
+                <div class="w-full lg:w-1/2 min-h-[200px] lg:min-h-[400px] bg-gray-200 flex items-center justify-center">
+                    <p class="text-gray-500">Map will go here</p>
+                </div>
 
             </div>
+
         </div>
+
     </div>
 
     {{-- faq --}}
     <div id="faqSection" class="relative bg-cover bg-top text-white transition-all duration-500"
-        style="background-image: url('https://wp-themes.com/wp-content/themes/production-factory/assets/images/section-img.png');">
+    style="background-image: url('https://wp-themes.com/wp-content/themes/production-factory/assets/images/section-img.png');">
 
-        <!-- DARK OVERLAY -->
-        <div class="absolute inset-0 bg-[#0B0B54]/75"></div>
+    <div class="absolute inset-0 bg-[#0B0B54]/75"></div>
 
-        <div class="relative z-10 container mx-auto grid grid-cols-2 gap-10 pt-20 pb-20">
-            <div>
-                <p class="text-[17px] text-[#ED1C24] mb-3">
-                    Frequently Asked Questions
-                </p>
-                <p class="text-[26px] font-bold capitalize mb-3">have any question for us?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est doloremque sapiente temporibus? Aliquam
-                    possimus quod nihil voluptatibus aliquid officiis molestias incidunt inventore iusto, omnis molestiae
-                    dolore adipisci doloremque nobis non.</p>
-                <img src="https://wp-themes.com/wp-content/themes/production-factory/assets/images/FAQ.png" alt="faq"
-                    class="mt-5 rounded-md">
-            </div>
+    <div class="relative z-10 container mx-auto px-5 lg:px-0 grid grid-cols-1 lg:grid-cols-2 gap-10 pt-20 pb-20">
 
-            <div>
-                <!-- FAQ LIST -->
-                <div class="space-y-3 ">
+        <!-- LEFT -->
+        <div>
+            <p class="text-[17px] text-[#ED1C24] mb-3">
+                Frequently Asked Questions
+            </p>
 
-                    <!-- ITEM -->
-                    <div class="border rounded-md p-4">
-                        <button class="w-full text-left font-semibold flex justify-between items-center faq-btn">
-                            What are your straws made from?
-                            <span>+</span>
-                        </button>
-                        <div class="faq-content hidden mt-3 text-white">
-                            Our straws are made from natural rice flour and tapioca starch, making them 100% biodegradable,
-                            food-safe, and eco-friendly.
-                        </div>
-                    </div>
+            <p class="text-[26px] font-bold capitalize mb-3">
+                have any question for us?
+            </p>
 
-                    <div class="border rounded-md p-4">
-                        <button class="w-full text-left font-semibold flex justify-between items-center faq-btn">
-                            Are rice straws safe for hot and cold drinks?
-                            <span>+</span>
-                        </button>
-                        <div class="faq-content hidden mt-3 text-white">
-                            Yes, our straws work in both hot and cold beverages without becoming soggy.
-                        </div>
-                    </div>
+            <p class="text-sm md:text-base">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit...
+            </p>
 
-                    <div class="border rounded-md p-4">
-                        <button class="w-full text-left font-semibold flex justify-between items-center faq-btn">
-                            Do you offer bulk orders for export?
-                            <span>+</span>
-                        </button>
-                        <div class="faq-content hidden mt-3 text-white">
-                            Yes, we provide bulk supply and export-ready packaging.
-                        </div>
-                    </div>
-
-                    <div class="border rounded-md p-4">
-                        <button class="w-full text-left font-semibold flex justify-between items-center faq-btn">
-                            Can you customize branding or packaging?
-                            <span>+</span>
-                        </button>
-                        <div class="faq-content hidden mt-3 text-white">
-                            Yes, we offer OEM/ODM services for custom branding and packaging.
-                        </div>
-                    </div>
-
-                    <div class="border rounded-md p-4">
-                        <button class="w-full text-left font-semibold flex justify-between items-center faq-btn">
-                            What sizes and colors are available?
-                            <span>+</span>
-                        </button>
-                        <div class="faq-content hidden mt-3 text-white">
-                            Available in 6mm, 8mm, 12mm with natural colors.
-                        </div>
-                    </div>
-
-                    <div class="border rounded-md p-4">
-                        <button class="w-full text-left font-semibold flex justify-between items-center faq-btn">
-                            What is your minimum order quantity (MOQ)?
-                            <span>+</span>
-                        </button>
-                        <div class="faq-content hidden mt-3 text-white">
-                            MOQ depends on product type and customization.
-                        </div>
-                    </div>
-
-                    <!-- EXTRA HIDDEN ITEMS -->
-                    <div class="extra-faq hidden space-y-3">
-
-                        <div class="border rounded-md p-4">
-                            <button class="w-full text-left font-semibold flex justify-between items-center faq-btn">
-                                Do you provide international shipping?
-                                <span>+</span>
-                            </button>
-                            <div class="faq-content hidden mt-3 text-white">
-                                Yes, we handle global export logistics.
-                            </div>
-                        </div>
-
-                        <div class="border rounded-md p-4">
-                            <button class="w-full text-left font-semibold flex justify-between items-center faq-btn">
-                                Are your products certified?
-                                <span>+</span>
-                            </button>
-                            <div class="faq-content hidden mt-3 text-white">
-                                We follow ISO and HACCP standards.
-                            </div>
-                        </div>
-
-                        <div class="border rounded-md p-4">
-                            <button class="w-full text-left font-semibold flex justify-between items-center faq-btn">
-                                How long do rice straws last?
-                                <span>+</span>
-                            </button>
-                            <div class="faq-content hidden mt-3 text-white">
-                                40–120 minutes depending on temperature.
-                            </div>
-                        </div>
-
-                        <div class="border rounded-md p-4">
-                            <button class="w-full text-left font-semibold flex justify-between items-center faq-btn">
-                                How can I request a quotation?
-                                <span>+</span>
-                            </button>
-                            <div class="faq-content hidden mt-3 text-white">
-                                Contact us via website form or WhatsApp.
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- VIEW MORE -->
-                <div class="text-center mt-6">
-                    <button id="faqToggleBtn" onclick="toggleFAQ()" class="px-6 py-2 bg-[#ED1C24] text-white rounded-md">
-                        View More
-                    </button>
-                </div>
-            </div>
+            <img src="https://wp-themes.com/wp-content/themes/production-factory/assets/images/FAQ.png"
+                class="mt-5 rounded-md w-full object-cover">
         </div>
 
+        <!-- RIGHT -->
+        <div>
+
+            <div class="space-y-3">
+
+                {{-- 6 VISIBLE FAQ --}}
+                <div class="border rounded-md p-4">
+                    <button class="faq-btn w-full flex justify-between font-semibold">
+                        What are your straws made from?
+                        <span>+</span>
+                    </button>
+                    <div class="faq-content hidden mt-3">
+                        Our straws are made from rice flour and tapioca starch.
+                    </div>
+                </div>
+
+                <div class="border rounded-md p-4">
+                    <button class="faq-btn w-full flex justify-between font-semibold">
+                        Are rice straws safe for hot drinks?
+                        <span>+</span>
+                    </button>
+                    <div class="faq-content hidden mt-3">
+                        Yes, safe for hot & cold drinks.
+                    </div>
+                </div>
+
+                <div class="border rounded-md p-4">
+                    <button class="faq-btn w-full flex justify-between font-semibold">
+                        Do you offer bulk orders?
+                        <span>+</span>
+                    </button>
+                    <div class="faq-content hidden mt-3">
+                        Yes, we support bulk export orders.
+                    </div>
+                </div>
+
+                <div class="border rounded-md p-4">
+                    <button class="faq-btn w-full flex justify-between font-semibold">
+                        Can you customize packaging?
+                        <span>+</span>
+                    </button>
+                    <div class="faq-content hidden mt-3">
+                        Yes, OEM/ODM available.
+                    </div>
+                </div>
+
+                <div class="border rounded-md p-4">
+                    <button class="faq-btn w-full flex justify-between font-semibold">
+                        What sizes are available?
+                        <span>+</span>
+                    </button>
+                    <div class="faq-content hidden mt-3">
+                        6mm, 8mm, 12mm.
+                    </div>
+                </div>
+
+                <div class="border rounded-md p-4">
+                    <button class="faq-btn w-full flex justify-between font-semibold">
+                        What is MOQ?
+                        <span>+</span>
+                    </button>
+                    <div class="faq-content hidden mt-3">
+                        Depends on order type.
+                    </div>
+                </div>
+
+                {{-- EXTRA 4 (hidden by default) --}}
+                <div class="extra-faq hidden space-y-3">
+
+                    <div class="border rounded-md p-4">
+                        <button class="faq-btn w-full flex justify-between font-semibold">
+                            Do you ship internationally?
+                            <span>+</span>
+                        </button>
+                        <div class="faq-content hidden mt-3">
+                            Yes, worldwide shipping available.
+                        </div>
+                    </div>
+
+                    <div class="border rounded-md p-4">
+                        <button class="faq-btn w-full flex justify-between font-semibold">
+                            Are products certified?
+                            <span>+</span>
+                        </button>
+                        <div class="faq-content hidden mt-3">
+                            ISO & HACCP certified.
+                        </div>
+                    </div>
+
+                    <div class="border rounded-md p-4">
+                        <button class="faq-btn w-full flex justify-between font-semibold">
+                            How long do straws last?
+                            <span>+</span>
+                        </button>
+                        <div class="faq-content hidden mt-3">
+                            40–120 minutes depending on drink.
+                        </div>
+                    </div>
+
+                    <div class="border rounded-md p-4">
+                        <button class="faq-btn w-full flex justify-between font-semibold">
+                            How to request quote?
+                            <span>+</span>
+                        </button>
+                        <div class="faq-content hidden mt-3">
+                            Contact via form or WhatsApp.
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- BUTTON -->
+            <div class="text-center mt-6">
+                <button id="faqToggleBtn"
+                    class="px-6 py-2 bg-[#ED1C24] text-white rounded-md">
+                    View More
+                </button>
+            </div>
+
+        </div>
     </div>
+</div>
 
     <!-- CTA SECTION -->
     <div class="my-20 bg-[#0B0B54] text-white py-20 text-center relative overflow-hidden">
@@ -528,15 +651,21 @@
         let index = 0;
         const carousel = document.getElementById("carousel");
         const totalSlides = carousel.children.length;
-        const visible = 3;
+
+        function getVisible() {
+            if (window.innerWidth < 640) return 1; // mobile
+            if (window.innerWidth < 1024) return 2; // tablet
+            return 3; // desktop
+        }
 
         function updateCarousel() {
+            const visible = getVisible();
             const slideWidth = 100 / visible;
             carousel.style.transform = `translateX(-${index * slideWidth}%)`;
         }
 
         window.nextSlide = function() {
-            // STOP at last possible position
+            const visible = getVisible();
             if (index < totalSlides - visible) {
                 index++;
                 updateCarousel();
@@ -544,50 +673,41 @@
         }
 
         window.prevSlide = function() {
-            // STOP at beginning
             if (index > 0) {
                 index--;
                 updateCarousel();
             }
         }
 
-    });
-
-    document.addEventListener("DOMContentLoaded", function() {
-
-        // Accordion toggle
-        document.querySelectorAll(".faq-btn").forEach(btn => {
-            btn.addEventListener("click", function() {
-                const content = this.nextElementSibling;
-
-                content.classList.toggle("hidden");
-
-                // toggle + / -
-                this.querySelector("span").textContent =
-                    content.classList.contains("hidden") ? "+" : "-";
-            });
+        window.addEventListener("resize", () => {
+            index = 0; // reset for safety
+            updateCarousel();
         });
 
-        // View more toggle
-        window.toggleFAQ = function() {
-            const extra = document.querySelector(".extra-faq");
-            const btn = document.getElementById("faqToggleBtn");
-            const section = document.getElementById("faqSection");
-
-            extra.classList.toggle("hidden");
-
-            const isOpen = !extra.classList.contains("hidden");
-
-            btn.textContent = isOpen ? "View Less" : "View More";
-
-            // optional: smooth scroll adjustment (nice UX)
-            setTimeout(() => {
-                section.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-            }, 200);
-        }
-
     });
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+    // FAQ accordion
+    document.querySelectorAll(".faq-btn").forEach(btn => {
+        btn.addEventListener("click", function () {
+            const content = this.nextElementSibling;
+            content.classList.toggle("hidden");
+            this.querySelector("span").textContent =
+                content.classList.contains("hidden") ? "+" : "-";
+        });
+    });
+
+    // View more (6 → 10)
+    const btn = document.getElementById("faqToggleBtn");
+    const extra = document.querySelector(".extra-faq");
+
+    btn.addEventListener("click", function () {
+        extra.classList.toggle("hidden");
+
+        const open = !extra.classList.contains("hidden");
+        btn.textContent = open ? "View Less" : "View More";
+    });
+
+});
 </script>
