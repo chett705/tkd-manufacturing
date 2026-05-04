@@ -2,47 +2,68 @@
 
 @section('content')
     {{-- hero section --}}
-    <div class="h-[93vh] bg-cover bg-center  relative text-white"
+    <div class="h-[93vh] bg-cover bg-center text-white relative"
         style="background-image: url('https://wp-themes.com/wp-content/themes/production-factory/assets/images/banner-image.png');">
 
-        <div class="absolute bottom-0 right-0 w-8/10 overflow-hidden">
+        <div class="absolute inset-0 bg-black/40"></div>
 
-            <!-- background -->
+        <!-- RED STRIP -->
+        <div class="absolute bottom-0 right-0 w-full lg:w-8/10 overflow-hidden">
+
             <div class="absolute inset-0 bg-[#ED1C24]
         [clip-path:polygon(10%_0,100%_0,100%_100%,0_100%)]">
             </div>
 
-            <!-- content -->
-            <div class="relative z-10 px-40 py-6 flex items-center justify-between gap-5">
-                <div class="flex items-center gap-2 cursor-pointer">
-                    <i class="fa-solid fa-phone text-black"></i>
-                    <p>+855 12 590 666</p>
-                </div>
-                <div class="flex items-center gap-2 cursor-pointer">
-                    <i class="fa-solid fa-envelope text-black"></i>
-                    <p>tkd.manufacturing89@gmail.com</p>
-                </div>
-                <div class="flex items-center gap-2 cursor-pointer">
-                    <i class="fa-solid fa-bullhorn text-black"></i>
-                    <p>Delivering Industrial Excellence with Every Product.</p>
-                </div>
-            </div>
+            <div
+                class="relative z-10 px-5 md:pl-15 lg:pl-20 2xl:px-40 py-4 md:py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-sm md:text-base">
 
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-phone text-black"></i>
+                    <p class="break-all">+855 12 590 666</p>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-envelope text-black"></i>
+                    <p class="break-all">tkd.manufacturing89@gmail.com</p>
+                </div>
+
+                <div class="flex items-center gap-2 text-center md:text-left">
+                    <i class="fa-solid fa-bullhorn text-black"></i>
+                    <p class="text-xs md:text-sm lg:text-base">
+                        Delivering Industrial Excellence with Every Product.
+                    </p>
+                </div>
+
+            </div>
         </div>
 
-        <div class="container mx-auto px-3 flex items-center  h-full ">
+        <!-- HERO CONTENT -->
+        <div class="container mx-auto px-5 flex items-center h-full relative z-10">
+            <div class="w-full lg:w-1/2 flex flex-col gap-5 text-center md:text-left">
 
-            <div class="w-1/2 flex flex-col gap-5">
-                <h2 class="text-[44px]">Reliable Eco-Friendly Straw Supplier from Cambodia</h2>
-                <p class="text-[22px]"> Bulk supply of high-quality rice-flour straws for global distributors, wholesalers,
-                    and brands.</p>
-                <div class="flex items-center gap-5">
+                <h2
+                    class="text-xl sm:text-2xl md:text-4xl lg:text-[44px]
+                       leading-snug md:leading-tight font-bold break-words">
+                    Sustainable Rice-Flour Straws from Cambodia to the World
+                </h2>
+
+                <p class="text-sm sm:text-base md:text-lg lg:text-[22px] leading-relaxed">
+                    Eco-friendly, biodegradable, and durable alternatives to plastic straws.
+                </p>
+
+                <!-- Buttons -->
+                <div class="flex flex-col sm:flex-row gap-3 w-full">
                     <a href=""
-                        class="w-full text-[16px] font-semibold py-3 border border-[#ED1C24] flex items-center justify-center bg-white text-[#ED1C24]">Get
-                        a Quote</a>
+                        class="w-full sm:w-auto px-6 py-3 border border-[#ED1C24]
+                          bg-white text-[#ED1C24] font-semibold text-center">
+                        Get a Quote
+                    </a>
+
                     <a href=""
-                        class="w-full text-[16px] font-semibold py-3 border border-[#ED1C24] flex items-center justify-center bg-white text-[#ED1C24]">Download
-                        Product Catalog</a>
+                        class="w-full sm:w-auto px-6 py-3 border border-[#ED1C24]
+                          bg-white text-[#ED1C24] font-semibold text-center">
+                        View Products
+                    </a>
                 </div>
             </div>
         </div>
@@ -53,12 +74,12 @@
 
         <!-- TITLE -->
         <div class="text-center mb-12">
-            <p class="uppercase text-2xl font-bold ">Who we serve</p>
+            <p class="uppercase text-2xl font-bold text-white">Who we serve</p>
             <div class="w-[60px] h-[3px] bg-[#ED1C24] mx-auto mt-2"></div>
         </div>
 
         <!-- CARDS -->
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 px-6">
+        <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-5 md:px-6">
 
             <!-- Card 1 -->
             <div class="bg-white p-6 rounded-lg shadow-md text-center">
@@ -106,9 +127,9 @@
     {{-- main product --}}
     <div class="min-h-[60vh] px-6 py-40  ">
 
-        <div class="container mx-auto px-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
 
                 <!-- LEFT: 2 IMAGES -->
                 <div class="grid grid-rows-2 gap-4">
@@ -127,7 +148,7 @@
 
             </div>
             <!-- RIGHT CONTENT -->
-            <div class="flex flex-col gap-8">
+            <div class="flex flex-col gap-3 sm:gap-4 h-full">
 
                 <!-- TITLE -->
                 <h2 class="text-3xl md:text-4xl font-bold ">
@@ -195,7 +216,7 @@
         </div>
     </div>
 
-    {{-- why choose us --}}
+    {{-- Strategic Manufacturing Advantages --}}
     <div class="mt-20 bg-[#0B0B54] py-20 text-white">
         <div class="max-w-7xl mx-auto px-6">
 
@@ -211,7 +232,7 @@
             </div>
 
             <!-- GRID -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
 
                 <!-- ITEM -->
                 <div class="border-l border-white/10 pl-6">
@@ -261,39 +282,41 @@
         </div>
     </div>
 
+    {{-- Production & Quality Assurance --}}
     <section class="bg-gray-50 py-12">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <h2 class="text-3xl font-bold  mb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-8">
                 Production & Quality Assurance
             </h2>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+
                 <!-- Left: Text content -->
                 <div class="space-y-6">
                     <div>
                         <h3 class="text-xl font-semibold text-[#ED1C24]">Modern Food-Grade Factory</h3>
-                        <p class="">
+                        <p class="text-sm sm:text-base">
                             High-precision machinery in a temperature and humidity-controlled environment.
                         </p>
                     </div>
 
                     <div>
                         <h3 class="text-xl font-semibold text-[#ED1C24]">Strict Hygiene Control</h3>
-                        <p class="">
+                        <p class="text-sm sm:text-base">
                             Technicians follow rigorous sanitary protocols including PPE and air-shower entry.
                         </p>
                     </div>
 
                     <div>
                         <h3 class="text-xl font-semibold text-[#ED1C24]">International Compliance</h3>
-                        <p class="">
+                        <p class="text-sm sm:text-base">
                             Manufactured according to FDA, EU, and global safety standards for food contact.
                         </p>
                     </div>
 
                     <div>
                         <h3 class="text-xl font-semibold text-[#ED1C24]">Quality Inspection</h3>
-                        <p class="">
+                        <p class="text-sm sm:text-base">
                             Three-stage testing for diameter accuracy, tensile strength, and shelf-life before shipment.
                         </p>
                     </div>
@@ -301,80 +324,96 @@
 
                 <!-- Right: Images -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
                     <div class="bg-white shadow rounded-lg overflow-hidden">
-                        <img src="core-facility.jpg" alt="Core Facility" class="w-full h-48 object-cover">
-                        <div class="p-4 text-center text-sm font-medium text-gray-700">CORE FACILITY</div>
+                        <img src="core-facility.jpg" alt="Core Facility" class="w-full h-48 sm:h-56 object-cover">
+                        <div class="p-4 text-center text-sm font-medium text-gray-700">
+                            CORE FACILITY
+                        </div>
                     </div>
 
                     <div class="bg-white shadow rounded-lg overflow-hidden">
-                        <img src="qa-lab.jpg" alt="QA Lab" class="w-full h-48 object-cover">
-                        <div class="p-4 text-center text-sm font-medium text-gray-700">QA LAB</div>
+                        <img src="qa-lab.jpg" alt="QA Lab" class="w-full h-48 sm:h-56 object-cover">
+                        <div class="p-4 text-center text-sm font-medium text-gray-700">
+                            QA LAB
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
     </section>
 
+    {{-- Global Export Capability --}}
     <section class="bg-[#0B0B54] text-white py-12">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
             <!-- Title -->
-            <h2 class="text-3xl font-bold  mb-6">
+            <h2 class="text-3xl font-bold mb-6">
                 Global Export Capability
             </h2>
-            <p class=" mb-10">
+
+            <p class="mb-10 text-sm sm:text-base">
                 We offer streamlined logistics solutions to over 40 countries, ensuring your inventory arrives on time and
                 in perfect condition.
             </p>
 
             <!-- Grid layout -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
                 <!-- Left column -->
                 <div class="space-y-6">
-                    <ul class="list-disc list-inside  space-y-2">
+
+                    <ul class="list-disc list-inside space-y-2 text-sm sm:text-base">
                         <li><span class="font-semibold">FOB</span> Sihanoukville Port</li>
                         <li><span class="font-semibold">CIF</span> Major Global Ports</li>
                         <li><span class="font-semibold">DDP</span> Shipping Support</li>
                     </ul>
 
                     <div>
-                        <h3 class="text-xl font-semibold ">Container Loading</h3>
-                        <p class="">
+                        <h3 class="text-xl font-semibold">Container Loading</h3>
+                        <p class="text-sm sm:text-base">
                             Specialized palletization for 20ft/40ft/40ft HQ containers to maximize space efficiency and
                             minimize movement during transit.
                         </p>
                     </div>
 
                     <div>
-                        <h3 class="text-xl font-semibold ">Documentation Support</h3>
-                        <p class="">
+                        <h3 class="text-xl font-semibold">Documentation Support</h3>
+                        <p class="text-sm sm:text-base">
                             Full handling of Certificates of Origin, Bill of Lading, Packing Lists, and specialized customs
                             documentation for different trade zones.
                         </p>
                     </div>
+
                 </div>
 
                 <!-- Right column -->
                 <div class="space-y-6">
+
                     <div>
-                        <h3 class="text-xl font-semibold ">International Markets</h3>
-                        <p class="">
+                        <h3 class="text-xl font-semibold">International Markets</h3>
+                        <p class="text-sm sm:text-base">
                             Vast experience serving North America, Europe, Australia, and ASEAN markets with compliant
                             export labeling.
                         </p>
                     </div>
 
                     <div>
-                        <h3 class="text-xl font-semibold ">Shipment Protection</h3>
-                        <p class="">
+                        <h3 class="text-xl font-semibold">Shipment Protection</h3>
+                        <p class="text-sm sm:text-base">
                             Moisture-resistant specialized export packaging (double-walled cartons) ensuring product
                             integrity across ocean transit.
                         </p>
                     </div>
+
                 </div>
+
             </div>
         </div>
     </section>
 
+    {{-- Wholesale MOQ & Customization --}}
     <section class="bg-gray-50 py-12">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <!-- Title -->
@@ -422,6 +461,7 @@
         </div>
     </section>
 
+    {{-- Our Certifications --}}
     <div class="py-20 bg-[#0B0B54]">
         <div class="container mx-auto px-4 text-center">
 
@@ -475,63 +515,48 @@
         </div>
     </div>
 
-    <section class="bg-gray-50 py-12">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <!-- Title -->
-            <h2 class="text-3xl font-bold text-gray-800 mb-10">
-                Operational Infrastructure
-            </h2>
-            <p class="text-gray-600 mb-12">
-                End-to-End Precision Manufacturing
-            </p>
+    {{-- Complex Gallery Section --}}
+    <section class="py-20 ">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <!-- Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Factory -->
-                <div class="bg-white shadow rounded-lg p-6 text-center">
-                    <div class="text-blue-600 text-4xl mb-4">🏭</div>
-                    <h3 class="text-xl font-semibold text-blue-700">Factory</h3>
-                    <p class="text-gray-600">
-                        ISO 9001:2015 Certified Production Center
-                    </p>
-                </div>
-
-                <!-- Production -->
-                <div class="bg-white shadow rounded-lg p-6 text-center">
-                    <div class="text-blue-600 text-4xl mb-4">👔</div>
-                    <h3 class="text-xl font-semibold text-blue-700">Production</h3>
-                    <p class="text-gray-600">
-                        Output capacity: 5M units/day
-                    </p>
-                </div>
-
-                <!-- Packing -->
-                <div class="bg-white shadow rounded-lg p-6 text-center">
-                    <div class="text-blue-600 text-4xl mb-4">📦</div>
-                    <h3 class="text-xl font-semibold text-blue-700">Packing</h3>
-                    <p class="text-gray-600">
-                        Customized B2B Packaging Solutions
-                    </p>
-                </div>
-
-                <!-- Container Loading -->
-                <div class="bg-white shadow rounded-lg p-6 text-center">
-                    <div class="text-blue-600 text-4xl mb-4">🚚</div>
-                    <h3 class="text-xl font-semibold text-blue-700">Container Loading</h3>
-                    <p class="text-gray-600">
-                        Weekly Export Cycles to EU/USA
-                    </p>
-                </div>
-
-                <!-- Delivered Orders -->
-                <div class="bg-white shadow rounded-lg p-6 text-center">
-                    <div class="text-blue-600 text-4xl mb-4">📦</div>
-                    <h3 class="text-xl font-semibold text-blue-700">Delivered Orders</h3>
-                    <p class="text-gray-600">
-                        Trusted Global Fulfillment Logistics
-                    </p>
-                </div>
+            <!-- TITLE -->
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-[#0B0B54]">Gallery</h2>
+                <p class="text-gray-600 mt-2">Structured visual showcase of our work</p>
             </div>
+
+            <!-- COMPLEX GRID -->
+            <div class="grid grid-cols-2 md:grid-cols-6 gap-4 auto-rows-[140px]">
+
+                <!-- BIG HERO IMAGE -->
+                <img src="https://picsum.photos/800/800?1"
+                    class="w-full h-full object-cover rounded-lg shadow-md col-span-2 md:col-span-3 row-span-2">
+
+                <!-- NORMAL -->
+                <img src="https://picsum.photos/500/500?2" class="w-full h-full object-cover rounded-lg shadow-md">
+
+                <img src="https://picsum.photos/500/500?3" class="w-full h-full object-cover rounded-lg shadow-md">
+
+                <!-- VERTICAL IMAGE -->
+                <img src="https://picsum.photos/500/700?4"
+                    class="w-full h-full object-cover rounded-lg shadow-md row-span-2">
+
+                <!-- NORMAL -->
+                <img src="https://picsum.photos/500/500?5" class="w-full h-full object-cover rounded-lg shadow-md">
+
+                <!-- WIDE IMAGE -->
+                <img src="https://picsum.photos/900/500?6"
+                    class="w-full h-full object-cover rounded-lg shadow-md col-span-2 md:col-span-3">
+
+                <!-- SMALL ITEMS -->
+                <img src="https://picsum.photos/500/500?7" class="w-full h-full object-cover rounded-lg shadow-md">
+
+                <img src="https://picsum.photos/500/500?8" class="w-full h-full object-cover rounded-lg shadow-md">
+
+                <img src="https://picsum.photos/500/500?9" class="w-full h-full object-cover rounded-lg shadow-md">
+
+            </div>
+
         </div>
     </section>
 @endsection
