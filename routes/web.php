@@ -88,5 +88,6 @@ Route::get('/blog', function () {
 Route::get('/activities', function () {
     return view('Frontend.pages.AtivitiesPage');
 })->name('activities');
-Route::get('/contact-us', [ContactController::class, 'contactPage'])->name('contact-us');
-Route::post('/contact-us', [ContactController::class, 'store'])->name('contact.store');
+Route::get('/contact-us', function () {
+    return view('Frontend.pages.ContactUsPage');
+})->name('contact-us');

@@ -28,7 +28,7 @@
             <table class="w-full">
                 <thead class="bg-gray-50 border-b">
                     <tr>
-                        <th class="px-6 py-5 text-left text-sm font-medium text-gray-500">User Name</th>
+                        <th class="px-6 py-5 text-left text-sm font-medium text-gray-500">Name</th>
                         <th class="px-6 py-5 text-left text-sm font-medium text-gray-500">Username</th>
                         <th class="px-6 py-5 text-left text-sm font-medium text-gray-500">Email</th>
                         <th class="px-6 py-5 text-left text-sm font-medium text-gray-500">Role</th>
