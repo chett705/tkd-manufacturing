@@ -8,32 +8,20 @@
     <!-- Header -->
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
         <div>
-            <h1 class="text-3xl font-bold text-gray-900">User Management</h1>
+            <h1 class="text-3xl font-bold text-[#0B0B54]">User Management</h1>
             <p class="text-gray-600 mt-1">Manage all your users</p>
         </div>
 
         <!-- Add New User Button -->
         <a href="{{ route('admin.users.create') }}" 
-           class="bg-[#003366] text-white px-6 py-3.5 rounded-2xl flex items-center gap-2 hover:bg-[#002244] transition shadow-sm w-full sm:w-auto justify-center">
+           class="admin-primary-btn flex w-full items-center justify-center gap-2 rounded-2xl px-6 py-3.5 transition sm:w-auto">
             <i class="fas fa-plus"></i>
             <span>Add New User</span>
         </a>
     </div>
 
-    @if(session('success'))
-        <div class="mb-6 bg-green-50 border border-green-200 text-green-700 px-6 py-4 rounded-2xl">
-            {{ session('success') }}
-        </div>
-    @endif
-
-    @if(session('error'))
-        <div class="mb-6 bg-red-50 border border-red-200 text-red-700 px-6 py-4 rounded-2xl">
-            {{ session('error') }}
-        </div>
-    @endif
-
     <!-- Table -->
-    <div class="bg-white rounded-3xl shadow-sm overflow-hidden">
+    <div class="admin-card overflow-hidden rounded-3xl">
 
         <!-- Desktop Table -->
         <div class="hidden md:block overflow-x-auto">
@@ -57,17 +45,17 @@
                         <td class="px-6 py-5 text-sm text-gray-600">{{ $user->username }}</td>
                         <td class="px-6 py-5 text-sm text-gray-600">{{ $user->email }}</td>
                         <td class="px-6 py-5 text-sm">
-                            <span class="capitalize px-3 py-1 bg-gray-100 rounded-xl text-xs font-medium">
+                            <span class="rounded-xl bg-[#eef1ff] px-3 py-1 text-xs font-medium capitalize text-[#0B0B54]">
                                 {{ $user->role ?? 'user' }}
                             </span>
                         </td>
                         <td class="px-6 py-5">
                             @if($user->is_active)
-                                <span class="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium bg-green-100 text-green-700">
+                                <span class="admin-status-active inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium">
                                     Active
                                 </span>
                             @else
-                                <span class="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium bg-red-100 text-red-700">
+                                <span class="admin-status-inactive inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium">
                                     Inactive
                                 </span>
                             @endif
@@ -76,7 +64,7 @@
                             <div class="flex justify-center gap-4">
                                 <!-- Edit -->
                                 <a href="{{ route('admin.users.edit', $user) }}" 
-                                   class="text-blue-600 hover:text-blue-700 text-xl transition">
+                                   class="admin-link text-xl transition">
                                     <i class="fas fa-edit"></i>
                                 </a>
 
@@ -91,8 +79,8 @@
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit"
-                                            onclick="return confirm('Are you sure you want to delete this user? This action cannot be undone.')"
-                                            class="text-red-600 hover:text-red-700 text-xl transition">
+                                            data-delete-message="This user will be deleted permanently. This action cannot be undone."
+                                            class="admin-danger-link text-xl transition">
                                             <i class="fas fa-trash"></i>
                                         </button>
                                     </form>
@@ -115,7 +103,7 @@
         <!-- Mobile Card View -->
         <div class="md:hidden p-4 space-y-4">
             @forelse($users as $user)
-            <div class="bg-white border border-gray-100 rounded-3xl p-5 shadow-sm">
+            <div class="admin-card rounded-3xl p-5">
                 <div class="flex justify-between">
                     <div>
                         <h3 class="font-semibold text-lg">{{ $user->name }}</h3>
@@ -123,7 +111,7 @@
                         <p class="text-sm text-gray-600">{{ $user->email }}</p>
                     </div>
                     <span class="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium 
-                        {{ $user->is_active ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700' }}">
+                        {{ $user->is_active ? 'admin-status-active' : 'admin-status-inactive' }}">
                         {{ $user->is_active ? 'Active' : 'Inactive' }}
                     </span>
                 </div>
@@ -132,7 +120,7 @@
                     <span class="text-sm text-gray-500 capitalize">Role: {{ $user->role ?? 'user' }}</span>
                     
                     <div class="flex gap-4">
-                        <a href="{{ route('admin.users.edit', $user) }}" class="text-blue-600">
+                        <a href="{{ route('admin.users.edit', $user) }}" class="admin-link">
                             <i class="fas fa-edit"></i>
                         </a>
 
@@ -144,7 +132,7 @@
                             <form action="{{ route('admin.users.destroy', $user) }}" method="POST" class="inline">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" onclick="return confirm('Delete this user?')" class="text-red-600">
+                                <button type="submit" data-delete-message="This user will be deleted permanently. This action cannot be undone." class="admin-danger-link">
                                     <i class="fas fa-trash"></i>
                                 </button>
                             </form>

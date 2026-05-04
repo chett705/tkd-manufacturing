@@ -56,7 +56,7 @@
                                 <form action="{{ route('admin.team-members.destroy', $teamMember) }}" method="POST" class="d-inline">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" onclick="return confirm('Delete this team member?')" class="text-red-600 hover:text-red-700 text-xl">
+                                    <button type="submit" data-delete-message="This team member will be deleted permanently." class="text-red-600 hover:text-red-700 text-xl">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>
@@ -91,7 +91,7 @@
                                 <form action="{{ route('admin.team-members.destroy', $teamMember) }}" method="POST" class="d-inline">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" onclick="return confirm('Delete this team member?')" class="text-red-600">
+                                    <button type="submit" data-delete-message="This team member will be deleted permanently." class="text-red-600">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>

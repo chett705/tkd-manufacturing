@@ -5,7 +5,6 @@
 @section('content')
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <!-- Header -->
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
         <div>
             <h1 class="text-3xl font-bold text-gray-900">Contacts Management</h1>
@@ -13,33 +12,26 @@
         </div>
     </div>
 
-    <!-- Search & Filter -->
     <div class="bg-white p-5 rounded-3xl shadow-sm mb-8 flex flex-col md:flex-row gap-4">
         <div class="flex-1">
-            <input type="text" id="search" 
-                   class="w-full px-5 py-4 border border-gray-200 rounded-2xl focus:outline-none focus:border-[#003366]"
-                   placeholder="Search by name or email...">
+            <input type="text" id="search"
+                class="w-full px-5 py-4 border border-gray-200 rounded-2xl focus:outline-none focus:border-[#003366]"
+                placeholder="Search by name or email...">
         </div>
-        <select id="country-filter" 
-                class="px-5 py-4 border border-gray-200 rounded-2xl focus:outline-none focus:border-[#003366]">
+        <select id="country-filter"
+            class="px-5 py-4 border border-gray-200 rounded-2xl focus:outline-none focus:border-[#003366]">
             <option value="">All Countries</option>
-            <option value="Cambodia">Cambodia</option>
-            <option value="Thailand">Thailand</option>
-            <option value="Vietnam">Vietnam</option>
-            <option value="China">China</option>
-            <option value="USA">USA</option>
-            <option value="Others">Others</option>
+            @foreach($contacts->pluck('country')->filter()->unique()->sort()->values() as $country)
+                <option value="{{ $country }}">{{ $country }}</option>
+            @endforeach
         </select>
-        <button onclick="filterContacts()" 
-                class="bg-gray-900 text-white px-10 py-4 rounded-2xl hover:bg-black transition font-medium">
+        <button type="button" onclick="filterContacts()"
+            class="bg-gray-900 text-white px-10 py-4 rounded-2xl hover:bg-black transition font-medium">
             Filter
         </button>
     </div>
 
-    <!-- Contacts Table -->
     <div class="bg-white rounded-3xl shadow-sm overflow-hidden">
-        
-        <!-- Desktop & Tablet Table -->
         <div class="hidden md:block overflow-x-auto">
             <table class="w-full min-w-full">
                 <thead class="bg-gray-50 border-b">
@@ -49,117 +41,98 @@
                         <th class="px-6 py-5 text-left text-sm font-medium text-gray-500">Email</th>
                         <th class="px-6 py-5 text-left text-sm font-medium text-gray-500">WhatsApp</th>
                         <th class="px-6 py-5 text-left text-sm font-medium text-gray-500">Product</th>
-                        <th class="px-6 py-5 text-left text-sm font-medium text-gray-500">Quantity</th>                      
-                        <th class="px-6 py-5 text-center text-sm font-medium text-gray-500 w-32">Actions</th>
+                        <th class="px-6 py-5 text-left text-sm font-medium text-gray-500">Quantity</th>
+                        <th class="px-6 py-5 text-left text-sm font-medium text-gray-500">Message</th>
+                        <th class="px-6 py-5 text-center text-sm font-medium text-gray-500 w-24">Actions</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-100">
-                    
-                    <!-- Dummy Contact 1 -->
-                    <tr class="hover:bg-gray-50 transition">
-                        <td class="px-6 py-5 font-semibold">Sokha Chhay</td>
-                        <td class="px-6 py-5">
-                            <span class="inline-flex items-center gap-2">
-                                🇰🇭 <span>Cambodia</span>
-                            </span>
-                        </td>
-                        <td class="px-6 py-5 text-sm text-gray-600">sokha.chhay@gmail.com</td>
-                        <td class="px-6 py-5 text-sm text-gray-600">+855 12 345 678</td>
-                        <td class="px-6 py-5 text-sm">Rice Straw 20cm</td>
-                        <td class="px-6 py-5 text-sm font-medium">5000</td>
-                        <td class="px-6 py-5 text-center">
-                            <div class="flex justify-center gap-4">
-                                <a href="{{ route('admin.contacts.edit', 1) }}" 
-                                   class="text-blue-600 hover:text-blue-700 text-xl">
-                                    <i class="fas fa-edit"></i>
-                                </a>
-                                <button onclick="alert('Deleted! (Testing)')" 
-                                        class="text-red-600 hover:text-red-700 text-xl">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <!-- Dummy Contact 2 -->
-                    <tr class="hover:bg-gray-50 transition">
-                        <td class="px-6 py-5 font-semibold">John Smith</td>
-                        <td class="px-6 py-5">
-                            <span class="inline-flex items-center gap-2">
-                                🇺🇸 <span>USA</span>
-                            </span>
-                        </td>
-                        <td class="px-6 py-5 text-sm text-gray-600">john.smith@email.com</td>
-                        <td class="px-6 py-5 text-sm text-gray-600">+1 234 567 890</td>
-                        <td class="px-6 py-5 text-sm">Biodegradable Bag</td>
-                        <td class="px-6 py-5 text-sm font-medium">2000</td>
-                        <td class="px-6 py-5 text-center">
-                            <div class="flex justify-center gap-4">
-                                <a href="{{ route('admin.contacts.edit', 2) }}" 
-                                   class="text-blue-600 hover:text-blue-700 text-xl">
-                                    <i class="fas fa-edit"></i>
-                                </a>
-                                <button onclick="alert('Deleted! (Testing)')" 
-                                        class="text-red-600 hover:text-red-700 text-xl">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-
+                    @forelse($contacts as $contact)
+                        <tr class="hover:bg-gray-50 transition contact-row"
+                            data-search="{{ strtolower($contact->full_name . ' ' . $contact->email) }}"
+                            data-country="{{ strtolower($contact->country) }}">
+                            <td class="px-6 py-5 font-semibold text-gray-800">{{ $contact->full_name }}</td>
+                            <td class="px-6 py-5 text-sm text-gray-600">{{ $contact->country }}</td>
+                            <td class="px-6 py-5 text-sm text-gray-600">{{ $contact->email }}</td>
+                            <td class="px-6 py-5 text-sm text-gray-600">{{ $contact->whatsapp ?: '-' }}</td>
+                            <td class="px-6 py-5 text-sm text-gray-600">{{ $contact->product?->name ?: 'N/A' }}</td>
+                            <td class="px-6 py-5 text-sm font-medium text-gray-700">{{ $contact->quantity ?: '-' }}</td>
+                            <td class="px-6 py-5 text-sm text-gray-600">{{ \Illuminate\Support\Str::limit($contact->message ?: '-', 60) }}</td>
+                            <td class="px-6 py-5 text-center">
+                                <form action="{{ route('admin.contacts.destroy', $contact) }}" method="POST" class="inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" data-delete-message="This contact inquiry will be deleted permanently." class="text-red-600 hover:text-red-700 text-xl">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="8" class="px-6 py-12 text-center text-gray-500">No contact requests found.</td>
+                        </tr>
+                    @endforelse
                 </tbody>
             </table>
         </div>
 
-        <!-- Mobile Card View -->
         <div class="md:hidden space-y-4 p-4">
-            
-            <!-- Contact 1 -->
-            <div class="bg-white border border-gray-100 rounded-3xl p-5 shadow-sm">
-                <div class="flex justify-between items-start">
-                    <h3 class="font-semibold text-lg">Sokha Chhay</h3>
+            @forelse($contacts as $contact)
+                <div class="bg-white border border-gray-100 rounded-3xl p-5 shadow-sm contact-row"
+                    data-search="{{ strtolower($contact->full_name . ' ' . $contact->email) }}"
+                    data-country="{{ strtolower($contact->country) }}">
+                    <div class="flex justify-between items-start gap-4">
+                        <div>
+                            <h3 class="font-semibold text-lg text-gray-800">{{ $contact->full_name }}</h3>
+                            <p class="text-sm text-gray-500 mt-1">{{ $contact->country }}{{ $contact->whatsapp ? ' - ' . $contact->whatsapp : '' }}</p>
+                            <p class="text-sm text-gray-600 mt-1 break-all">{{ $contact->email }}</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 space-y-2 text-sm text-gray-600">
+                        <p><strong>Product:</strong> {{ $contact->product?->name ?: 'N/A' }}</p>
+                        <p><strong>Quantity:</strong> {{ $contact->quantity ?: '-' }}</p>
+                        <p><strong>Message:</strong> {{ $contact->message ?: '-' }}</p>
+                    </div>
+                    <div class="mt-5 flex gap-3">
+                        <form action="{{ route('admin.contacts.destroy', $contact) }}" method="POST" class="w-full">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" data-delete-message="This contact inquiry will be deleted permanently." class="w-full text-center py-3 bg-red-50 text-red-600 rounded-2xl text-sm font-medium">
+                                <i class="fas fa-trash"></i> Delete
+                            </button>
+                        </form>
+                    </div>
                 </div>
-                <p class="text-sm text-gray-500">🇰🇭 Cambodia • +855 12 345 678</p>
-                <p class="text-sm text-gray-600 mt-1">sokha.chhay@gmail.com</p>
-                <div class="mt-4 text-sm">
-                    <strong>Product:</strong> Rice Straw 20cm × 5000
+            @empty
+                <div class="bg-white border border-gray-100 rounded-3xl p-5 shadow-sm text-center text-gray-500">
+                    No contact requests found.
                 </div>
-                <div class="mt-5 flex gap-3">
-                    <a href="{{ route('admin.contacts.edit', 1) }}" 
-                       class="flex-1 text-center py-3 bg-blue-50 text-blue-600 rounded-2xl text-sm font-medium">
-                        <i class="fas fa-edit"></i> Edit
-                    </a>
-                    <button onclick="alert('Deleted!')" 
-                            class="flex-1 text-center py-3 bg-red-50 text-red-600 rounded-2xl text-sm font-medium">
-                        <i class="fas fa-trash"></i> Delete
-                    </button>
-                </div>
-            </div>
-
-            <!-- Contact 2 -->
-            <div class="bg-white border border-gray-100 rounded-3xl p-5 shadow-sm">
-                <div class="flex justify-between items-start">
-                    <h3 class="font-semibold text-lg">John Smith</h3>
-                </div>
-                <p class="text-sm text-gray-500">🇺🇸 USA • +1 234 567 890</p>
-                <p class="text-sm text-gray-600 mt-1">john.smith@email.com</p>
-                <div class="mt-4 text-sm">
-                    <strong>Product:</strong> Biodegradable Bag × 2000
-                </div>
-                <div class="mt-5 flex gap-3">
-                    <a href="{{ route('admin.contacts.edit', 2) }}" 
-                       class="flex-1 text-center py-3 bg-blue-50 text-blue-600 rounded-2xl text-sm font-medium">
-                        <i class="fas fa-edit"></i> Edit
-                    </a>
-                    <button onclick="alert('Deleted!')" 
-                            class="flex-1 text-center py-3 bg-red-50 text-red-600 rounded-2xl text-sm font-medium">
-                        <i class="fas fa-trash"></i> Delete
-                    </button>
-                </div>
-            </div>
-
+            @endforelse
         </div>
-
     </div>
+
+    @if($contacts->hasPages())
+        <div class="mt-6 rounded-3xl border border-gray-100 bg-white px-4 py-4 shadow-sm sm:px-6">
+            {{ $contacts->links() }}
+        </div>
+    @endif
 </div>
+
+<script>
+    function filterContacts() {
+        const searchValue = document.getElementById('search').value.trim().toLowerCase();
+        const countryValue = document.getElementById('country-filter').value.trim().toLowerCase();
+        const rows = document.querySelectorAll('.contact-row');
+
+        rows.forEach((row) => {
+            const searchText = row.dataset.search || '';
+            const countryText = row.dataset.country || '';
+            const matchesSearch = !searchValue || searchText.includes(searchValue);
+            const matchesCountry = !countryValue || countryText === countryValue;
+
+            row.style.display = matchesSearch && matchesCountry ? '' : 'none';
+        });
+    }
+</script>
 @endsection

@@ -67,7 +67,7 @@
                                 <form action="{{ route('admin.certificates.destroy', $certificate) }}" method="POST" class="d-inline">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" onclick="return confirm('Delete this certificate?')" 
+                                    <button type="submit" data-delete-message="This certificate will be deleted permanently." 
                                             class="text-red-600 hover:text-red-700 text-xl">
                                         <i class="fas fa-trash"></i>
                                     </button>
@@ -108,7 +108,7 @@
                                 <form action="{{ route('admin.certificates.destroy', $certificate) }}" method="POST" class="d-inline">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" onclick="return confirm('Delete this certificate?')" class="text-red-600">
+                                    <button type="submit" data-delete-message="This certificate will be deleted permanently." class="text-red-600">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>

@@ -4,12 +4,6 @@
 
 @section('content')
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    @if(session('success'))
-        <div class="mb-6 rounded-2xl bg-green-100 px-4 py-3 text-green-700">
-            {{ session('success') }}
-        </div>
-    @endif
-
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
         <div>
             <h1 class="text-3xl font-bold text-gray-900">Rice Straws vs Paper Straws</h1>
@@ -46,7 +40,7 @@
                             <form action="{{ route('admin.blogs.destroy', $blog) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" onclick="return confirm('Delete this comparison?')" class="text-red-600 hover:text-red-700 text-xl">
+                                <button type="submit" data-delete-message="This comparison will be deleted permanently." class="text-red-600 hover:text-red-700 text-xl">
                                     <i class="fas fa-trash"></i>
                                 </button>
                             </form>
@@ -84,7 +78,7 @@
                 <form action="{{ route('admin.blogs.destroy', $blog) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" onclick="return confirm('Delete this comparison?')" class="text-red-600">
+                    <button type="submit" data-delete-message="This comparison will be deleted permanently." class="text-red-600">
                         <i class="fas fa-trash"></i>
                     </button>
                 </form>

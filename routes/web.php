@@ -65,7 +65,7 @@ Route::prefix('admin')
         Route::resource('team-members', TeamMemberController::class);
         Route::resource('activities', ActivityController::class);
         Route::resource('faqs', FaqController::class);
-        Route::resource('contacts', ContactController::class);
+        Route::resource('contacts', ContactController::class)->only(['index', 'destroy']);
         Route::resource('users', UserController::class);
         Route::resource('home-sections', HomeSectionController::class);
         
@@ -88,6 +88,5 @@ Route::get('/blog', function () {
 Route::get('/activities', function () {
     return view('Frontend.pages.AtivitiesPage');
 })->name('activities');
-Route::get('/contact-us', function () {
-    return view('Frontend.pages.ContactUsPage');
-})->name('contact-us');
+Route::get('/contact-us', [ContactController::class, 'contactPage'])->name('contact-us');
+Route::post('/contact-us', [ContactController::class, 'store'])->name('contact.store');

@@ -74,7 +74,7 @@
                                 <form action="{{ route('admin.products.destroy', $product) }}" method="POST" class="d-inline">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" onclick="return confirm('Delete this product?')"
+                                    <button type="submit" data-delete-message="This product will be deleted permanently."
                                         class="text-red-600 hover:text-red-700 text-xl">
                                         <i class="fas fa-trash"></i>
                                     </button>
@@ -116,7 +116,7 @@
                                 <form action="{{ route('admin.products.destroy', $product) }}" method="POST" class="d-inline">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" onclick="return confirm('Delete this product?')" class="text-red-600">
+                                    <button type="submit" data-delete-message="This product will be deleted permanently." class="text-red-600">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>

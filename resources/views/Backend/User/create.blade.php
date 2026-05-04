@@ -4,8 +4,8 @@
 
 @section('content')
 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <div class="bg-white rounded-3xl shadow-sm p-8">
-        <h1 class="text-3xl font-bold text-gray-900 mb-2">Add New User</h1>
+    <div class="admin-card rounded-3xl p-8">
+        <h1 class="mb-2 text-3xl font-bold text-[#0B0B54]">Add New User</h1>
         <p class="text-gray-600 mb-8">Create a new account for the admin panel</p>
 
         <form action="{{ route('admin.users.store') }}" method="POST">
@@ -15,7 +15,7 @@
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-2">Full Name <span class="text-red-500">*</span></label>
                     <input type="text" name="name" value="{{ old('name') }}"
-                           class="w-full rounded-2xl border-gray-300 focus:border-blue-500 py-3 px-4" required>
+                           class="admin-input w-full rounded-2xl px-4 py-3" required>
                     @error('name')
                         <p class="text-red-600 text-sm mt-2">{{ $message }}</p>
                     @enderror
@@ -24,7 +24,7 @@
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-2">Username <span class="text-red-500">*</span></label>
                     <input type="text" name="username" value="{{ old('username') }}"
-                           class="w-full rounded-2xl border-gray-300 focus:border-blue-500 py-3 px-4" required>
+                           class="admin-input w-full rounded-2xl px-4 py-3" required>
                     @error('username')
                         <p class="text-red-600 text-sm mt-2">{{ $message }}</p>
                     @enderror
@@ -33,7 +33,7 @@
                 <div class="md:col-span-2">
                     <label class="block text-sm font-medium text-gray-700 mb-2">Email Address <span class="text-red-500">*</span></label>
                     <input type="email" name="email" value="{{ old('email') }}"
-                           class="w-full rounded-2xl border-gray-300 focus:border-blue-500 py-3 px-4" required>
+                           class="admin-input w-full rounded-2xl px-4 py-3" required>
                     @error('email')
                         <p class="text-red-600 text-sm mt-2">{{ $message }}</p>
                     @enderror
@@ -42,7 +42,7 @@
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-2">Password <span class="text-red-500">*</span></label>
                     <input type="password" name="password"
-                           class="w-full rounded-2xl border-gray-300 focus:border-blue-500 py-3 px-4" required>
+                           class="admin-input w-full rounded-2xl px-4 py-3" required>
                     @error('password')
                         <p class="text-red-600 text-sm mt-2">{{ $message }}</p>
                     @enderror
@@ -51,12 +51,12 @@
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-2">Confirm Password <span class="text-red-500">*</span></label>
                     <input type="password" name="password_confirmation"
-                           class="w-full rounded-2xl border-gray-300 focus:border-blue-500 py-3 px-4" required>
+                           class="admin-input w-full rounded-2xl px-4 py-3" required>
                 </div>
 
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-2">Role <span class="text-red-500">*</span></label>
-                    <select name="role" class="w-full rounded-2xl border-gray-300 focus:border-blue-500 py-3 px-4" required>
+                    <select name="role" class="admin-select w-full rounded-2xl px-4 py-3" required>
                         
                         <option value="admin" {{ old('role') === 'admin' ? 'selected' : '' }}>Admin</option>
                     </select>
@@ -67,7 +67,7 @@
 
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-2">Status <span class="text-red-500">*</span></label>
-                    <select name="is_active" class="w-full rounded-2xl border-gray-300 focus:border-blue-500 py-3 px-4" required>
+                    <select name="is_active" class="admin-select w-full rounded-2xl px-4 py-3" required>
                         <option value="1" {{ old('is_active', '1') == '1' ? 'selected' : '' }}>Active</option>
                         <option value="0" {{ old('is_active') == '0' ? 'selected' : '' }}>Inactive</option>
                     </select>
@@ -79,11 +79,11 @@
 
             <div class="flex gap-4 mt-10">
                 <a href="{{ route('admin.users.index') }}"
-                   class="px-8 py-3.5 border border-gray-300 rounded-2xl font-medium hover:bg-gray-50">
+                   class="admin-secondary-btn rounded-2xl px-8 py-3.5 font-medium">
                     Cancel
                 </a>
                 <button type="submit"
-                        class="bg-[#003366] text-white px-8 py-3.5 rounded-2xl font-medium hover:bg-[#002244]">
+                        class="admin-primary-btn rounded-2xl px-8 py-3.5 font-medium">
                     Create User
                 </button>
             </div>

@@ -33,12 +33,6 @@
         </a>
     </div>
 
-    @if (session('success'))
-        <div class="rounded-2xl border border-green-200 bg-green-50 px-5 py-4 text-green-700">
-            {{ session('success') }}
-        </div>
-    @endif
-
     <div class="grid gap-4 md:hidden">
         @forelse ($pages as $page)
             <div class="rounded-3xl border border-gray-100 bg-white p-5 shadow">
@@ -76,7 +70,7 @@
                         @csrf
                         @method('DELETE')
                         <button type="submit"
-                            onclick="return confirm('Are you sure you want to delete this page?')"
+                            data-delete-message="This page will be deleted permanently."
                             class="inline-flex items-center gap-2 rounded-xl bg-red-50 px-4 py-2 text-sm font-medium text-red-700 transition hover:bg-red-100">
                             <i class="fas fa-trash"></i>
                             <span>Delete</span>
@@ -144,7 +138,7 @@
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit"
-                                            onclick="return confirm('Are you sure you want to delete this page?')"
+                                            data-delete-message="This page will be deleted permanently."
                                             class="rounded-xl p-3 text-red-600 transition hover:bg-red-50"
                                             title="Delete page">
                                             <i class="fas fa-trash"></i>
@@ -340,4 +334,3 @@
     });
 </script>
 @endsection
-

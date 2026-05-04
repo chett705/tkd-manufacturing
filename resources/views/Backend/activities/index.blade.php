@@ -4,12 +4,6 @@
 
 @section('content')
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    @if(session('success'))
-        <div class="mb-6 rounded-2xl bg-green-100 px-4 py-3 text-green-700">
-            {{ session('success') }}
-        </div>
-    @endif
-
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
         <div>
             <h1 class="text-3xl font-bold text-gray-900">Activity Management</h1>
@@ -52,7 +46,7 @@
                                 <form action="{{ route('admin.activities.destroy', $activity) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" onclick="return confirm('Delete this activity?')" class="text-red-600 hover:text-red-700 text-xl">
+                                    <button type="submit" data-delete-message="This activity will be deleted permanently." class="text-red-600 hover:text-red-700 text-xl">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>
@@ -83,7 +77,7 @@
                             <form action="{{ route('admin.activities.destroy', $activity) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" onclick="return confirm('Delete this activity?')" class="text-red-600">
+                                <button type="submit" data-delete-message="This activity will be deleted permanently." class="text-red-600">
                                     <i class="fas fa-trash"></i>
                                 </button>
                             </form>

@@ -9,3 +9,130 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+@layer base {
+    :root {
+        --admin-primary: #0b0b54;
+        --admin-primary-dark: #070739;
+        --admin-primary-soft: #eef1ff;
+        --admin-primary-border: #cdd7ff;
+        --admin-accent: #ed1c24;
+        --admin-accent-soft: #fff1f2;
+        --admin-accent-dark: #c4171e;
+        --admin-text: #14142b;
+        --admin-shell: #f5f7fb;
+    }
+
+    body {
+        color: var(--admin-text);
+        background:
+            radial-gradient(circle at top left, rgba(11, 11, 84, 0.08), transparent 28%),
+            radial-gradient(circle at top right, rgba(237, 28, 36, 0.07), transparent 22%),
+            linear-gradient(180deg, #fbfcff 0%, var(--admin-shell) 100%);
+    }
+}
+
+@layer components {
+    .admin-shell {
+        background:
+            radial-gradient(circle at top left, rgba(11, 11, 84, 0.08), transparent 24%),
+            radial-gradient(circle at bottom right, rgba(237, 28, 36, 0.06), transparent 18%),
+            linear-gradient(180deg, #fbfcff 0%, var(--admin-shell) 100%);
+    }
+
+    .admin-card {
+        background: rgba(255, 255, 255, 0.94);
+        border: 1px solid rgba(205, 215, 255, 0.7);
+        box-shadow: 0 18px 45px rgba(11, 11, 84, 0.08);
+        backdrop-filter: blur(10px);
+    }
+
+    .admin-sidebar {
+        background: linear-gradient(180deg, rgba(11, 11, 84, 0.98) 0%, rgba(9, 9, 66, 0.98) 100%);
+        color: #fff;
+        box-shadow: 18px 0 40px rgba(7, 7, 57, 0.18);
+    }
+
+    .admin-sidebar-link {
+        color: rgba(255, 255, 255, 0.78);
+    }
+
+    .admin-sidebar-link:hover {
+        background: rgba(255, 255, 255, 0.08);
+        color: #fff;
+    }
+
+    .admin-sidebar-link-active {
+        background: linear-gradient(135deg, rgba(237, 28, 36, 0.18), rgba(255, 255, 255, 0.12));
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .admin-section-label {
+        color: rgba(255, 255, 255, 0.48);
+    }
+
+    .admin-primary-btn {
+        background: linear-gradient(135deg, var(--admin-primary) 0%, #1a1a7a 100%);
+        color: #fff;
+        box-shadow: 0 16px 30px rgba(11, 11, 84, 0.18);
+    }
+
+    .admin-primary-btn:hover {
+        background: linear-gradient(135deg, var(--admin-primary-dark) 0%, var(--admin-primary) 100%);
+    }
+
+    .admin-secondary-btn {
+        background: #fff;
+        color: var(--admin-primary);
+        border: 1px solid rgba(205, 215, 255, 0.9);
+    }
+
+    .admin-secondary-btn:hover {
+        background: var(--admin-primary-soft);
+    }
+
+    .admin-input,
+    .admin-select,
+    .admin-textarea {
+        border-color: #d8deea;
+        background: rgba(255, 255, 255, 0.94);
+    }
+
+    .admin-input:focus,
+    .admin-select:focus,
+    .admin-textarea:focus {
+        border-color: var(--admin-accent);
+        box-shadow: 0 0 0 3px rgba(237, 28, 36, 0.12);
+        outline: none;
+    }
+
+    .admin-link {
+        color: var(--admin-primary);
+    }
+
+    .admin-link:hover {
+        color: var(--admin-accent);
+    }
+
+    .admin-danger-link {
+        color: var(--admin-accent);
+    }
+
+    .admin-danger-link:hover {
+        color: var(--admin-accent-dark);
+    }
+
+    .admin-status-active {
+        background: #edfdf2;
+        color: #166534;
+        border: 1px solid #bbf7d0;
+    }
+
+    .admin-status-inactive {
+        background: var(--admin-accent-soft);
+        color: #b91c1c;
+        border: 1px solid #fecdd3;
+    }
+}

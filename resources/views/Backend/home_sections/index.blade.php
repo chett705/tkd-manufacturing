@@ -64,7 +64,7 @@
                                 <form action="{{ route('admin.home-sections.destroy', $section) }}" method="POST" class="d-inline">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" onclick="return confirm('Are you sure you want to delete this section?')" 
+                                    <button type="submit" data-delete-message="This section will be deleted permanently." 
                                             class="text-red-600 hover:text-red-700 text-xl">
                                         <i class="fas fa-trash"></i>
                                     </button>
@@ -105,7 +105,7 @@
                     <form action="{{ route('admin.home-sections.destroy', $section) }}" method="POST" class="d-inline">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" onclick="return confirm('Delete this section?')" class="text-red-600">
+                        <button type="submit" data-delete-message="This section will be deleted permanently." class="text-red-600">
                             <i class="fas fa-trash"></i>
                         </button>
                     </form>
